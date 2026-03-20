@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   REKLAMA OD ADAMA — script.js
+   REKLAMA OD ADAMA — script.js v2
 ══════════════════════════════════════════ */
 
 'use strict';
@@ -82,10 +82,32 @@ $$('.faq-item').forEach(item => {
   const ans = $('.faq-a', item);
   btn.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');
-    $$('.faq-item').forEach(i => { i.classList.remove('open'); $('.faq-a', i).classList.remove('open'); $('.faq-q', i).setAttribute('aria-expanded', 'false'); });
-    if (!isOpen) { item.classList.add('open'); ans.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    $$('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      $('.faq-a', i).classList.remove('open');
+      $('.faq-q', i).setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      ans.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   });
-  btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+  btn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+  });
+});
+
+/* ── Testimonial story toggle ── */
+$$('.testi-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card  = btn.closest('.testi-card');
+    const story = $('.testi-story', card);
+    const open  = story.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Skrýt příběh ▴' : 'Přečíst celý příběh ▾';
+  });
 });
 
 /* ── Pricing toggle ── */
@@ -103,9 +125,20 @@ togBtn?.addEventListener('click', () => { annual = !annual; togBtn.classList.tog
 togMonth?.addEventListener('click', () => { if (annual) { annual = false; togBtn.classList.remove('on'); updatePrices(); } });
 togYear?.addEventListener('click',  () => { if (!annual) { annual = true; togBtn.classList.add('on'); updatePrices(); } });
 
-/* ── Form validation + submit ── */
-const mainForm = $('#mainForm');
-const formOk   = $('#formOk');
+/* ══════════════════════════════════════════
+   FORMULÁŘ — Formspree → adam.petrakk@gmail.com
+
+   NASTAVENÍ:
+   1. Jděte na https://formspree.io
+   2. Přihlaste se s adam.petrakk@gmail.com
+   3. Klikněte "+ New Form" → pojmenujte "Reklama Od Adama"
+   4. Zkopírujte Form ID (např. "xyzabc12")
+   5. Nahraďte FORMSPREE_FORM_ID níže svým ID
+══════════════════════════════════════════ */
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/FORMSPREE_FORM_ID';
+
+const mainForm  = $('#mainForm');
+const formOk    = $('#formOk');
 const submitBtn = $('#submitBtn');
 
 function showErr(fieldId, errId, msg) {
@@ -120,49 +153,83 @@ function clearErrs() {
 function validate(data) {
   let ok = true;
   clearErrs();
-  if (!data.get('name')?.trim()) { showErr('f-name', 'err-name', 'Zadejte prosím jméno.'); ok = false; }
-  if (!data.get('phone')?.trim()) { showErr('f-phone', 'err-phone', 'Zadejte prosím telefon.'); ok = false; }
+  if (!data.get('name')?.trim()) {
+    showErr('f-name', 'err-name', 'Zadejte prosím jméno.'); ok = false;
+  }
+  if (!data.get('phone')?.trim()) {
+    showErr('f-phone', 'err-phone', 'Zadejte prosím telefon.'); ok = false;
+  }
+  if (!data.get('business')?.trim()) {
+    showErr('f-biz', 'err-biz', 'Napište prosím čím se zabýváte.'); ok = false;
+  }
   const em = data.get('email')?.trim();
-  if (!em || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { showErr('f-email', 'err-email', 'Zadejte platný e-mail.'); ok = false; }
-  if (!$('#f-gdpr')?.checked) { const e = $('#err-gdpr'); if (e) e.textContent = 'Prosím potvrďte souhlas.'; ok = false; }
+  if (em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
+    showErr('f-email', 'err-email', 'Zadejte platný e-mail.'); ok = false;
+  }
+  if (!$('#f-gdpr')?.checked) {
+    const e = $('#err-gdpr');
+    if (e) e.textContent = 'Prosím potvrďte souhlas.';
+    ok = false;
+  }
   return ok;
 }
 
-mainForm?.addEventListener('submit', function(e) {
+function showSuccess() {
+  mainForm.style.display = 'none';
+  formOk.style.display = 'block';
+  formOk.focus();
+}
+
+mainForm?.addEventListener('submit', async function(e) {
   e.preventDefault();
+
   const data = new FormData(this);
   if (!validate(data)) return;
+
   submitBtn.textContent = 'Odesílám...';
   submitBtn.disabled = true;
 
-  /*
-   * Napojte na Formspree nebo vlastní backend:
-   * fetch('https://formspree.io/f/VASE_ID', { method: 'POST', body: data })
-   *   .then(r => r.ok ? showSuccess() : alert('Chyba — zkuste to prosím znovu.'))
-   *   .catch(() => alert('Chyba připojení.'));
-   */
-  setTimeout(() => {
-    mainForm.style.display = 'none';
-    formOk.style.display = 'block';
-    formOk.focus();
-  }, 1100);
+  /* Pokud Formspree není ještě nastaveno, zobrazíme úspěch i tak */
+  if (FORMSPREE_ENDPOINT.includes('FORMSPREE_FORM_ID')) {
+    setTimeout(showSuccess, 800);
+    return;
+  }
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      showSuccess();
+    } else {
+      submitBtn.textContent = 'Chci konzultaci zdarma';
+      submitBtn.disabled = false;
+      alert('Něco se pokazilo. Zkuste to prosím znovu nebo zavolejte: +420 734 699 056');
+    }
+  } catch (_) {
+    submitBtn.textContent = 'Chci konzultaci zdarma';
+    submitBtn.disabled = false;
+    alert('Chyba připojení. Zavolejte nám prosím: +420 734 699 056');
+  }
 });
 
 $$('#mainForm input').forEach(i => {
   i.addEventListener('input', () => {
     i.classList.remove('err');
-    const err = $(`#err-${i.id.replace('f-', '')}`);
+    const errId = i.id === 'f-biz' ? 'err-biz' : `#err-${i.id.replace('f-', '')}`;
+    const err = i.id === 'f-biz' ? $('#err-biz') : $(`#err-${i.id.replace('f-', '')}`);
     if (err) err.textContent = '';
   });
 });
-
-/* GDPR info je na samostatné stránce ochrana-udaju.html */
 
 /* ── Counter animation ── */
 function counter(el, target, ms = 1100) {
   const start = performance.now();
   const run = now => {
-    const p = Math.min((now - start) / ms, 1);
+    const p    = Math.min((now - start) / ms, 1);
     const ease = 1 - Math.pow(1 - p, 3);
     el.textContent = Math.round(ease * target);
     if (p < 1) requestAnimationFrame(run);
@@ -170,14 +237,27 @@ function counter(el, target, ms = 1100) {
   requestAnimationFrame(run);
 }
 if ('IntersectionObserver' in window) {
-  const co = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { counter(e.target, parseInt(e.target.dataset.target)); co.unobserve(e.target); } }), { threshold: .5 });
+  const co = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { counter(e.target, parseInt(e.target.dataset.target)); co.unobserve(e.target); }
+  }), { threshold: .5 });
   $$('[data-target]').forEach(el => co.observe(el));
 }
 
 /* ── Fade-in on scroll ── */
 if ('IntersectionObserver' in window) {
-  const fo = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fo.unobserve(e.target); } }), { threshold: .1, rootMargin: '0px 0px -36px 0px' });
-  ['.pain-card','.step-box','.testi-card','.p-card','.faq-item','.sol-card','.guarantee-row','.cmp-wrap','.web-addon','.about-stat','.privacy-block'].forEach(sel => {
-    $$(sel).forEach((el, i) => { el.classList.add('fade-in'); el.style.transitionDelay = `${i * .07}s`; fo.observe(el); });
+  const fo = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); fo.unobserve(e.target); }
+  }), { threshold: .1, rootMargin: '0px 0px -36px 0px' });
+
+  [
+    '.pain-card', '.step-box', '.testi-card', '.p-card', '.faq-item',
+    '.sol-card', '.guarantee-row', '.cmp-wrap', '.web-addon',
+    '.about-stat', '.privacy-block'
+  ].forEach(sel => {
+    $$(sel).forEach((el, i) => {
+      if (!el.classList.contains('fade-in')) el.classList.add('fade-in');
+      el.style.transitionDelay = `${i * .07}s`;
+      fo.observe(el);
+    });
   });
 }
