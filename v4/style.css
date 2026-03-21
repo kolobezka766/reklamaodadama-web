@@ -81,6 +81,9 @@ img, video {
   height: auto;
 }
 
+/* Ensure HTML [hidden] attribute always wins over CSS display rules */
+[hidden] { display: none !important; }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1240,6 +1243,9 @@ ul, ol {
   }
 
   .hero__title {
+    /* Scale to fit: at 375px 10.5vw≈39px < 2.5rem=40px so minimum applies;
+       "Reklama" in Syne 900 at 40px ≈ 277px which fits in 335px container */
+    font-size: clamp(2.5rem, 10.5vw, 5rem);
     margin-bottom: var(--sp-8);
   }
 
