@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reklama od Adama – výkonnostní reklama na Facebooku a Instagramu. Výsledky měřitelné v korunách, ne v lajcích." />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta property="og:title" content="Reklama od Adama – Výkonnostní reklama" />
+  <meta property="og:description" content="Reklama která prodává. Facebook Ads · Instagram Ads · Správa sítí." />
+  <meta property="og:type" content="website" />
+  <title>Reklama od Adama – Reklama která prodává</title>
+
+  <!-- Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip to main content -->
+  <a class="skip-link" href="#main">Přejít na obsah</a>
+
+  <!-- Scroll progress indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="nav__inner">
+
+      <a href="#home" class="nav__logo" aria-label="Reklama od Adama – na začátek stránky">
+        Reklama<span class="logo__sep"> od </span>Adama
+      </a>
+
+      <nav class="nav__links" role="navigation" aria-label="Hlavní navigace">
+        <a href="#sluzby" class="nav__link">Služby</a>
+        <a href="#jak-to-funguje" class="nav__link">Proces</a>
+        <a href="#o-mne" class="nav__link">O mně</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a href="#kontakt" class="nav__cta">Konzultace zdarma</a>
+      </nav>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Otevřít navigační menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobilní navigace">
+    <nav>
+      <a href="#sluzby"         class="mobile-link">Služby</a>
+      <a href="#jak-to-funguje" class="mobile-link">Proces</a>
+      <a href="#o-mne"          class="mobile-link">O mně</a>
+      <a href="#faq"            class="mobile-link">FAQ</a>
+      <a href="#kontakt"        class="mobile-link mobile-link--cta">Konzultace zdarma →</a>
+    </nav>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ─── HERO ─── -->
+    <section class="hero" id="home" aria-label="Úvodní sekce">
+
+      <div class="hero__inner">
+
+        <p class="hero__eyebrow reveal-line">
+          Výkonnostní reklama&thinsp;·&thinsp;Česká republika
+        </p>
+
+        <h1 class="hero__title" aria-label="Reklama která prodává.">
+          <span class="hero__title-line reveal-line">Reklama</span>
+          <span class="hero__title-line hero__title-line--em reveal-line">která</span>
+          <span class="hero__title-line reveal-line">prodává<span class="accent-dot">.</span></span>
+        </h1>
+
+        <div class="hero__bottom">
+          <div class="hero__desc reveal-line">
+            <p>
+              Výsledky měřitelné v korunách, ne v lajcích.<br>
+              Facebook Ads&ensp;·&ensp;Instagram Ads&ensp;·&ensp;Správa sítí.
+            </p>
+            <a href="#kontakt" class="cta-link">
+              Začít spolupráci <span class="cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="hero__stats" aria-label="Klíčová čísla">
+            <div class="hero-stat reveal-line">
+              <span class="hero-stat__num">
+                <span data-count="47">0</span>+
+              </span>
+              <span class="hero-stat__label">klientů</span>
+            </div>
+            <div class="hero-stat reveal-line">
+              <span class="hero-stat__num">
+                <span data-count="380">0</span>%
+              </span>
+              <span class="hero-stat__label">průměrné ROAS</span>
+            </div>
+            <div class="hero-stat reveal-line">
+              <span class="hero-stat__num">
+                <span data-count="3">0</span>+
+              </span>
+              <span class="hero-stat__label">roky praxe</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+
+    </section>
+
+    <!-- ─── TICKER ─── -->
+    <div class="ticker" aria-hidden="true" role="presentation">
+      <div class="ticker__track">
+        <span class="ticker__item">Facebook Ads</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Instagram Ads</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Správa sítí</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Content Creation</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Performance Marketing</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Retargeting</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">A/B testování</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Analýza dat</span>
+        <span class="ticker__sep">◆</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker__item">Facebook Ads</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Instagram Ads</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Správa sítí</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Content Creation</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Performance Marketing</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Retargeting</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">A/B testování</span>
+        <span class="ticker__sep">◆</span>
+        <span class="ticker__item">Analýza dat</span>
+        <span class="ticker__sep">◆</span>
+      </div>
+    </div>
+
+    <!-- ─── SERVICES ─── -->
+    <section class="services section--dark" id="sluzby" aria-label="Nabízené služby">
+      <div class="section__inner">
+
+        <div class="section__header">
+          <span class="section-eyebrow">01&ensp;—&ensp;Služby</span>
+          <h2 class="section-title reveal-line">
+            Co pro vás<br>udělám.
+          </h2>
+        </div>
+
+        <div class="services__list" role="list">
+
+          <article class="service-item reveal-line" role="listitem">
+            <span class="service-item__num" aria-hidden="true">01</span>
+            <div class="service-item__content">
+              <h3>Facebook &amp; Instagram Ads</h3>
+              <p>
+                Navrhuji, spouštím a optimalizuji placené kampaně s jasným cílem: každá
+                koruna pracuje tam, kde generuje výsledky. Přesné cílení, kreativní testování,
+                průběžná optimalizace.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-item reveal-line" role="listitem">
+            <span class="service-item__num" aria-hidden="true">02</span>
+            <div class="service-item__content">
+              <h3>Správa sociálních sítí</h3>
+              <p>
+                Konzistentní a strategická přítomnost na sítích bez vaší starostlivosti.
+                Od obsahové strategie přes tvorbu příspěvků až po měsíční reporting s
+                jasnými daty.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-item reveal-line" role="listitem">
+            <span class="service-item__num" aria-hidden="true">03</span>
+            <div class="service-item__content">
+              <h3>Content Creation</h3>
+              <p>
+                Texty, grafiky a krátká videa, která zastaví palec při scrollování.
+                Obsah navržený k prodeji, ne ke sbírání lajků od lidí, kteří nikdy
+                nic nekoupí.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-item reveal-line" role="listitem">
+            <span class="service-item__num" aria-hidden="true">04</span>
+            <div class="service-item__content">
+              <h3>Audit &amp; Strategie</h3>
+              <p>
+                Podrobná analýza stávajícího marketingu, konkurence a cílové skupiny.
+                Dostanete konkrétní akční plán — ne obecná doporučení, ale kroky
+                s předpokládaným dopadem na výsledky.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── PROCESS ─── -->
+    <section class="process section--light" id="jak-to-funguje" aria-label="Jak spolupráce probíhá">
+      <div class="section__inner">
+
+        <div class="section__header">
+          <span class="section-eyebrow section-eyebrow--dark">02&ensp;—&ensp;Proces</span>
+          <h2 class="section-title section-title--dark reveal-line">
+            Jak to<br>funguje.
+          </h2>
+        </div>
+
+        <div class="process__steps">
+
+          <div class="process-step reveal-line">
+            <div class="process-step__num" aria-hidden="true">1</div>
+            <div class="process-step__body">
+              <h3>Bezplatná konzultace</h3>
+              <p>
+                Zavoláme si nebo si napíšeme. Chci vědět vše o vašem businessu,
+                o tom, co jste zkoušeli, co fungovalo a co ne. Žádné prodávání
+                na první schůzce.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step reveal-line">
+            <div class="process-step__num" aria-hidden="true">2</div>
+            <div class="process-step__body">
+              <h3>Strategie &amp; Setup</h3>
+              <p>
+                Připravím kampaňovou strategii, nastavím strukturu reklamních účtů,
+                připravím první kreativy a zajistím správné sledování konverzí.
+                Základ, na který se dá stavět.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step reveal-line">
+            <div class="process-step__num" aria-hidden="true">3</div>
+            <div class="process-step__body">
+              <h3>Spuštění &amp; Optimalizace</h3>
+              <p>
+                Kampaně jedou. Průběžně je ladím na základě reálných dat —
+                každý týden víte přesně, co se děje, proč a co plánuji dělat dál.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── PROOF / STATS ─── -->
+    <section class="proof section--dark" aria-label="Výsledky a čísla">
+      <div class="section__inner">
+
+        <span class="section-eyebrow">03&ensp;—&ensp;Výsledky</span>
+
+        <div class="proof__grid">
+
+          <div class="proof-stat reveal-line">
+            <span class="proof-stat__num">
+              <span data-count="47">0</span>+
+            </span>
+            <span class="proof-stat__label">spokojených klientů</span>
+          </div>
+
+          <div class="proof-stat reveal-line">
+            <span class="proof-stat__num">
+              <span data-count="380">0</span>%
+            </span>
+            <span class="proof-stat__label">průměrné ROAS</span>
+          </div>
+
+          <div class="proof-stat reveal-line">
+            <span class="proof-stat__num">
+              <span data-count="98">0</span>%
+            </span>
+            <span class="proof-stat__label">klientů doporučuje</span>
+          </div>
+
+          <div class="proof-stat reveal-line">
+            <span class="proof-stat__num">
+              <span data-count="3">0</span>+
+            </span>
+            <span class="proof-stat__label">roky v oboru</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section class="about section--light" id="o-mne" aria-label="O mně">
+      <div class="section__inner">
+
+        <div class="about__layout">
+
+          <div class="about__content">
+            <span class="section-eyebrow section-eyebrow--dark">04&ensp;—&ensp;O mně</span>
+            <h2 class="section-title section-title--dark reveal-line">
+              Jsem Adam.<br>
+              Dělám reklamu<br>
+              jinak.
+            </h2>
+            <div class="about__text reveal-line">
+              <p>
+                Nejsem agentura s desítkami klientů a juniorním koordinátorem
+                na vašem účtu. Jsem jeden člověk, který se o váš účet stará
+                osobně — každý den.
+              </p>
+              <p>
+                Začínal jsem ve velkých agenturách. Naučil jsem se tam systémy,
+                strategie a to, co opravdu funguje. Dnes je aplikuji s flexibilitou
+                a rychlostí, kterou žádná agentura nemá.
+              </p>
+              <p>
+                Každý klient dostane moji plnou pozornost, přímou komunikaci
+                a výsledky, o které mu skutečně jde.
+              </p>
+            </div>
+            <a href="#kontakt" class="cta-link cta-link--dark reveal-line">
+              Pojďme spolupracovat <span class="cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="about__deco" aria-hidden="true">
+            <span class="about__deco-text">Adam</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="faq section--dark" id="faq" aria-label="Časté otázky">
+      <div class="section__inner">
+
+        <div class="section__header">
+          <span class="section-eyebrow">05&ensp;—&ensp;FAQ</span>
+          <h2 class="section-title reveal-line">
+            Časté<br>otázky.
+          </h2>
+        </div>
+
+        <div class="faq__list">
+
+          <div class="faq-item">
+            <button
+              class="faq-item__q"
+              aria-expanded="false"
+              aria-controls="faq-a1"
+              id="faq-q1"
+            >
+              <span>Kolik stojí vaše služby?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+              <p>
+                Cenu vždy nastavuji individuálně podle rozsahu a náročnosti spolupráce.
+                Na úvodní konzultaci zdarma proberu vaše potřeby a připravím konkrétní
+                nabídku. Základní správa sociálních sítí startuje od 8 000&nbsp;Kč/měsíc,
+                správa reklam od 5 000&nbsp;Kč/měsíc + % z utráceného budgetu.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              class="faq-item__q"
+              aria-expanded="false"
+              aria-controls="faq-a2"
+              id="faq-q2"
+            >
+              <span>Jak rychle uvidím výsledky?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+              <p>
+                U placených kampaní jsou první data vidět do týdne. Reálné a stabilní
+                výsledky se projevují po 4–6 týdnech, kdy mají kampaně dostatek dat pro
+                optimalizaci. Organický content potřebuje 2–3 měsíce pro měřitelné výsledky.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              class="faq-item__q"
+              aria-expanded="false"
+              aria-controls="faq-a3"
+              id="faq-q3"
+            >
+              <span>Jak probíhá reportování?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+              <p>
+                Každý měsíc dostanete přehledný report s klíčovými metrikami, vývojem
+                kampaní a mými doporučeními na další období. Mimo to jsem dostupný přes
+                e-mail nebo telefon kdykoliv to bude potřeba — obvykle odpovídám tentýž den.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              class="faq-item__q"
+              aria-expanded="false"
+              aria-controls="faq-a4"
+              id="faq-q4"
+            >
+              <span>Pracujete i se začínajícím businessem?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+              <p>
+                Ano. Pro začínající businessy mám specifický přístup — začínáme pomaleji,
+                testujeme co funguje a nehážeme peníze do reklamy naslepo. Důležité je,
+                abyste měli funkční produkt nebo službu a realistická očekávání.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              class="faq-item__q"
+              aria-expanded="false"
+              aria-controls="faq-a5"
+              id="faq-q5"
+            >
+              <span>Na jak dlouho je spolupráce?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+              <p>
+                Preferuji spolupráci na minimálně 3 měsíce — to je čas potřebný k tomu,
+                aby se kampaně dostatečně naučily a přinesly skutečné výsledky. Krátkodobé
+                projekty jako audity nebo jednorázový setup jsou samozřejmě možné.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section class="contact section--light" id="kontakt" aria-label="Kontaktní formulář">
+      <div class="section__inner">
+
+        <div class="contact__layout">
+
+          <div class="contact__header">
+            <span class="section-eyebrow section-eyebrow--dark">06&ensp;—&ensp;Kontakt</span>
+            <h2 class="section-title section-title--dark reveal-line">
+              Pojďme<br>na to.
+            </h2>
+            <p class="contact__sub reveal-line">
+              Napište mi — do 24 hodin se ozvu zpět.
+            </p>
+
+            <div class="contact__details">
+              <div class="contact-detail reveal-line">
+                <span class="contact-detail__label">E-mail</span>
+                <a href="mailto:adam.petrakk@gmail.com" class="contact-detail__value">
+                  adam.petrakk@gmail.com
+                </a>
+              </div>
+              <div class="contact-detail reveal-line">
+                <span class="contact-detail__label">Sledujte mě</span>
+                <div class="social-links">
+                  <a
+                    href="https://www.instagram.com/reklamaodadama/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="Instagram – Reklama od Adama"
+                  >Instagram</a>
+                  <a
+                    href="https://www.facebook.com/reklamaodadama"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="Facebook – Reklama od Adama"
+                  >Facebook</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__form-wrap">
+
+            <form
+              class="contact-form"
+              id="contact-form"
+              novalidate
+              aria-label="Kontaktní formulář"
+            >
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name">Jméno <span class="req" aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    aria-required="true"
+                    aria-describedby="name-error"
+                    placeholder="Jan Novák"
+                  />
+                  <span class="field-error" id="name-error" role="alert" aria-live="polite"></span>
+                </div>
+                <div class="form-field">
+                  <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
+                    aria-describedby="email-error"
+                    placeholder="jan@firma.cz"
+                  />
+                  <span class="field-error" id="email-error" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Telefon</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+420 000 000 000"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="business">
+                  O čem je váš business? <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="business"
+                  name="business"
+                  required
+                  aria-required="true"
+                  aria-describedby="business-error"
+                  placeholder="E-shop s oblečením, lokální kavárna, B2B SaaS..."
+                />
+                <span class="field-error" id="business-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-field">
+                <label for="message">Zpráva</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Co chcete zlepšit? Jaký je váš cíl?"
+                ></textarea>
+              </div>
+
+              <div class="form-field form-field--gdpr">
+                <label class="gdpr-label">
+                  <input
+                    type="checkbox"
+                    id="gdpr"
+                    name="gdpr"
+                    aria-required="true"
+                    aria-describedby="gdpr-error"
+                  />
+                  <span>
+                    Souhlasím se zpracováním osobních údajů dle
+                    <a href="/gdpr" target="_blank" rel="noopener">zásad ochrany osobních údajů</a>.
+                  </span>
+                </label>
+                <span class="field-error" id="gdpr-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" id="submit-btn" class="submit-btn">
+                <span class="btn__text">Odeslat zprávu</span>
+                <span class="btn__arrow" aria-hidden="true">→</span>
+                <span class="btn__spinner" hidden aria-hidden="true"></span>
+              </button>
+
+            </form>
+
+            <div
+              class="form-success"
+              id="form-success"
+              hidden
+              tabindex="-1"
+              aria-live="polite"
+              role="status"
+            >
+              <div class="success__mark" aria-hidden="true">✓</div>
+              <h3>Zpráva odeslána.</h3>
+              <p>Děkuji za vaši důvěru — ozvu se do 24 hodin.</p>
+            </div>
+
+          </div><!-- /.contact__form-wrap -->
+        </div><!-- /.contact__layout -->
+      </div><!-- /.section__inner -->
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer section--dark" role="contentinfo">
+    <div class="footer__inner">
+      <span class="footer__brand">Reklama od Adama</span>
+      <span class="footer__copy">© 2024 Adam Petrák. Všechna práva vyhrazena.</span>
+      <a href="#home" class="footer__top" aria-label="Zpět na začátek stránky">
+        ↑ Nahoru
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
