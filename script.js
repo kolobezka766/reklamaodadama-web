@@ -1,263 +1,352 @@
-/* ══════════════════════════════════════════
-   REKLAMA OD ADAMA — script.js v2
-══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════
+   REKLAMA OD ADAMA — script.js V6
+═══════════════════════════════════════════════════════ */
 
 'use strict';
 
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+/* ── Scroll progress bar ── */
+(function initScrollProgress() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  const update = () => {
+    const scrolled  = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrolled / docHeight) * 100 : 0;
+    bar.style.width = pct.toFixed(2) + '%';
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
 
-/* ── Urgency bar ── */
-const urgBar   = $('#urgencyBar');
-const urgClose = $('#urgencyClose');
-const navbar   = $('#navbar');
+/* ── Navbar scroll effect ── */
+(function initNavbar() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+  const onScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
 
-function dismissUrgency() {
-  urgBar.classList.add('hidden');
-  navbar.classList.add('urgency-hidden');
-  try { sessionStorage.setItem('urg-dismissed', '1'); } catch(_) {}
-}
-if (sessionStorage.getItem('urg-dismissed')) dismissUrgency();
-urgClose?.addEventListener('click', dismissUrgency);
+/* ── Urgency bar — dynamický měsíc ── */
+(function initUrgencyText() {
+  const el = document.getElementById('urgencyText');
+  if (!el) return;
 
-/* ── Navbar scroll + hamburger ── */
-const hamburger = $('#hamburger');
-window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+  const mesice = [
+    'Leden','Únor','Březen','Duben','Květen','Červen',
+    'Červenec','Srpen','Září','Říjen','Listopad','Prosinec'
+  ];
+  const now   = new Date();
+  const mesic = mesice[now.getMonth()];
+  const rok   = now.getFullYear();
 
-hamburger?.addEventListener('click', () => {
-  const open = navbar.classList.toggle('menu-open');
-  hamburger.classList.toggle('open', open);
-  hamburger.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
-});
-$$('#navLinks a').forEach(a => a.addEventListener('click', () => {
-  navbar.classList.remove('menu-open');
-  hamburger.classList.remove('open');
-}));
-document.addEventListener('click', e => {
-  if (navbar.classList.contains('menu-open') && !navbar.contains(e.target)) {
-    navbar.classList.remove('menu-open');
-    hamburger.classList.remove('open');
-  }
-});
+  el.innerHTML = `<strong>${mesic} ${rok}:</strong> Zbývá 1 ze 2 volných míst pro nového klienta`;
 
-/* ── Smooth scroll ── */
-function offset() {
-  const uh = urgBar.classList.contains('hidden') ? 0 : urgBar.offsetHeight;
-  return uh + navbar.offsetHeight + 12;
-}
-$$('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (!href || href === '#') return;
-    const target = $(href);
-    if (!target) return;
-    e.preventDefault();
-    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset(), behavior: 'smooth' });
-  });
-});
+  // Also update form month label
+  const formMonth = document.getElementById('formMonth');
+  if (formMonth) formMonth.textContent = mesic;
+})();
 
-/* ── Active nav on scroll ── */
-const sections = $$('section[id]');
-const navLinks = $$('#navLinks a');
-window.addEventListener('scroll', () => {
-  const y = window.pageYOffset + offset() + 40;
-  let cur = '';
-  sections.forEach(s => { if (y >= s.offsetTop) cur = s.id; });
-  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${cur}`));
-}, { passive: true });
-
-/* ── Sticky CTA ── */
-const stickyCta = $('#stickyCta');
-const heroEl    = $('#hero');
-window.addEventListener('scroll', () => {
-  if (!heroEl || !stickyCta) return;
-  const show = heroEl.getBoundingClientRect().bottom < 0;
-  stickyCta.classList.toggle('visible', show);
-  stickyCta.setAttribute('aria-hidden', String(!show));
-}, { passive: true });
-
-/* ── FAQ Accordion ── */
-$$('.faq-item').forEach(item => {
-  const btn = $('.faq-q', item);
-  const ans = $('.faq-a', item);
-  btn.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-    $$('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      $('.faq-a', i).classList.remove('open');
-      $('.faq-q', i).setAttribute('aria-expanded', 'false');
+/* ── Urgency bar close ── */
+(function initUrgencyBar() {
+  const bar   = document.getElementById('urgencyBar');
+  const close = document.getElementById('urgencyClose');
+  if (!bar || !close) return;
+  close.addEventListener('click', () => {
+    bar.style.maxHeight = bar.offsetHeight + 'px';
+    requestAnimationFrame(() => {
+      bar.style.transition = 'max-height .3s ease, opacity .3s ease, padding .3s ease';
+      bar.style.maxHeight  = '0';
+      bar.style.opacity    = '0';
+      bar.style.padding    = '0';
+      bar.style.overflow   = 'hidden';
     });
-    if (!isOpen) {
-      item.classList.add('open');
-      ans.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
+    setTimeout(() => bar.remove(), 350);
+  });
+})();
+
+/* ── Hamburger / mobile menu ── */
+(function initHamburger() {
+  const btn    = document.getElementById('hamburger');
+  const menu   = document.getElementById('mobileMenu');
+  const navbar = document.getElementById('navbar');
+  if (!btn || !menu) return;
+
+  const toggle = (open) => {
+    btn.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-hidden', String(!open));
+    menu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  btn.addEventListener('click', () => {
+    toggle(btn.getAttribute('aria-expanded') !== 'true');
+  });
+
+  menu.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => toggle(false));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (navbar && !navbar.contains(e.target)) toggle(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+      toggle(false);
+      btn.focus();
     }
   });
-  btn.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
-  });
-});
+})();
 
-/* ── Testimonial story toggle ── */
-$$('.testi-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card  = btn.closest('.testi-card');
-    const story = $('.testi-story', card);
-    const open  = story.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', String(open));
-    btn.textContent = open ? 'Skrýt příběh ▴' : 'Přečíst celý příběh ▾';
-  });
-});
+/* ── Reveal on scroll ── */
+(function initReveal() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const elements = document.querySelectorAll('.fade-up');
 
-/* ── Pricing toggle ── */
-const togBtn   = $('#tog-btn');
-const togMonth = $('#tog-monthly');
-const togYear  = $('#tog-annual');
-let annual = false;
-function updatePrices() {
-  $$('.p-amt').forEach(el => { el.textContent = annual ? el.dataset.annual : el.dataset.monthly; });
-  togMonth.classList.toggle('active', !annual);
-  togYear.classList.toggle('active', annual);
-  togBtn.setAttribute('aria-checked', String(annual));
-}
-togBtn?.addEventListener('click', () => { annual = !annual; togBtn.classList.toggle('on', annual); updatePrices(); });
-togMonth?.addEventListener('click', () => { if (annual) { annual = false; togBtn.classList.remove('on'); updatePrices(); } });
-togYear?.addEventListener('click',  () => { if (!annual) { annual = true; togBtn.classList.add('on'); updatePrices(); } });
-
-/* ══════════════════════════════════════════
-   FORMULÁŘ — Formspree → adam.petrakk@gmail.com
-
-   NASTAVENÍ:
-   1. Jděte na https://formspree.io
-   2. Přihlaste se s adam.petrakk@gmail.com
-   3. Klikněte "+ New Form" → pojmenujte "Reklama Od Adama"
-   4. Zkopírujte Form ID (např. "xyzabc12")
-   5. Nahraďte FORMSPREE_FORM_ID níže svým ID
-══════════════════════════════════════════ */
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/FORMSPREE_FORM_ID';
-
-const mainForm  = $('#mainForm');
-const formOk    = $('#formOk');
-const submitBtn = $('#submitBtn');
-
-function showErr(fieldId, errId, msg) {
-  const f = $(`#${fieldId}`), e = $(`#${errId}`);
-  if (f) f.classList.add('err');
-  if (e) e.textContent = msg;
-}
-function clearErrs() {
-  $$('.fg input').forEach(i => i.classList.remove('err'));
-  $$('.ferr').forEach(e => { e.textContent = ''; });
-}
-function validate(data) {
-  let ok = true;
-  clearErrs();
-  if (!data.get('name')?.trim()) {
-    showErr('f-name', 'err-name', 'Zadejte prosím jméno.'); ok = false;
-  }
-  if (!data.get('phone')?.trim()) {
-    showErr('f-phone', 'err-phone', 'Zadejte prosím telefon.'); ok = false;
-  }
-  if (!data.get('business')?.trim()) {
-    showErr('f-biz', 'err-biz', 'Napište prosím čím se zabýváte.'); ok = false;
-  }
-  const em = data.get('email')?.trim();
-  if (em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
-    showErr('f-email', 'err-email', 'Zadejte platný e-mail.'); ok = false;
-  }
-  if (!$('#f-gdpr')?.checked) {
-    const e = $('#err-gdpr');
-    if (e) e.textContent = 'Prosím potvrďte souhlas.';
-    ok = false;
-  }
-  return ok;
-}
-
-function showSuccess() {
-  mainForm.style.display = 'none';
-  formOk.style.display = 'block';
-  formOk.focus();
-}
-
-mainForm?.addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const data = new FormData(this);
-  if (!validate(data)) return;
-
-  submitBtn.textContent = 'Odesílám...';
-  submitBtn.disabled = true;
-
-  /* Pokud Formspree není ještě nastaveno, zobrazíme úspěch i tak */
-  if (FORMSPREE_ENDPOINT.includes('FORMSPREE_FORM_ID')) {
-    setTimeout(showSuccess, 800);
+  if (prefersReduced) {
+    elements.forEach(el => el.classList.add('visible'));
     return;
   }
 
-  try {
-    const res = await fetch(FORMSPREE_ENDPOINT, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el       = entry.target;
+      const siblings = Array.from(el.parentElement?.querySelectorAll('.fade-up') ?? []);
+      const idx      = siblings.indexOf(el);
+      const delay    = Math.min(idx * 70, 280);
+      setTimeout(() => el.classList.add('visible'), delay);
+      observer.unobserve(el);
     });
+  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
 
-    if (res.ok) {
-      showSuccess();
-    } else {
-      submitBtn.textContent = 'Chci konzultaci zdarma';
-      submitBtn.disabled = false;
-      alert('Něco se pokazilo. Zkuste to prosím znovu nebo zavolejte: +420 734 699 056');
+  elements.forEach(el => observer.observe(el));
+})();
+
+/* ── Animated counters ── */
+(function initCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const animateCounter = (el, target) => {
+    if (prefersReduced) {
+      el.textContent = target.toLocaleString('cs-CZ');
+      return;
     }
-  } catch (_) {
-    submitBtn.textContent = 'Chci konzultaci zdarma';
-    submitBtn.disabled = false;
-    alert('Chyba připojení. Zavolejte nám prosím: +420 734 699 056');
-  }
-});
-
-$$('#mainForm input').forEach(i => {
-  i.addEventListener('input', () => {
-    i.classList.remove('err');
-    const errId = i.id === 'f-biz' ? 'err-biz' : `#err-${i.id.replace('f-', '')}`;
-    const err = i.id === 'f-biz' ? $('#err-biz') : $(`#err-${i.id.replace('f-', '')}`);
-    if (err) err.textContent = '';
-  });
-});
-
-/* ── Counter animation ── */
-function counter(el, target, ms = 1100) {
-  const start = performance.now();
-  const run = now => {
-    const p    = Math.min((now - start) / ms, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(ease * target);
-    if (p < 1) requestAnimationFrame(run);
+    const duration = 1800;
+    const start    = performance.now();
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease     = 1 - Math.pow(1 - progress, 3);
+      const value    = Math.floor(ease * target);
+      el.textContent = value.toLocaleString('cs-CZ');
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toLocaleString('cs-CZ');
+    };
+    requestAnimationFrame(tick);
   };
-  requestAnimationFrame(run);
-}
-if ('IntersectionObserver' in window) {
-  const co = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting) { counter(e.target, parseInt(e.target.dataset.target)); co.unobserve(e.target); }
-  }), { threshold: .5 });
-  $$('[data-target]').forEach(el => co.observe(el));
-}
 
-/* ── Fade-in on scroll ── */
-if ('IntersectionObserver' in window) {
-  const fo = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); fo.unobserve(e.target); }
-  }), { threshold: .1, rootMargin: '0px 0px -36px 0px' });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el     = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      animateCounter(el, target);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
 
-  [
-    '.pain-card', '.step-box', '.testi-card', '.p-card', '.faq-item',
-    '.sol-card', '.guarantee-row', '.cmp-wrap', '.web-addon',
-    '.about-stat', '.privacy-block'
-  ].forEach(sel => {
-    $$(sel).forEach((el, i) => {
-      if (!el.classList.contains('fade-in')) el.classList.add('fade-in');
-      el.style.transitionDelay = `${i * .07}s`;
-      fo.observe(el);
+  counters.forEach(el => observer.observe(el));
+})();
+
+/* ── FAQ Accordion ── */
+(function initFaq() {
+  const questions = document.querySelectorAll('.faq-item__q');
+
+  questions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      questions.forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        const ans = document.getElementById(b.getAttribute('aria-controls'));
+        if (ans) ans.hidden = true;
+      });
+
+      // Open clicked if was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        const ans = document.getElementById(btn.getAttribute('aria-controls'));
+        if (ans) ans.hidden = false;
+      }
+    });
+
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === ' ') { e.preventDefault(); btn.click(); }
     });
   });
-}
+})();
+
+/* ── Testimonial expand/collapse ── */
+(function initTestimonials() {
+  const toggles = document.querySelectorAll('.testi-toggle');
+
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen  = btn.getAttribute('aria-expanded') === 'true';
+      const storyId = btn.getAttribute('aria-controls');
+      const story   = document.getElementById(storyId);
+      if (!story) return;
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      story.hidden = isOpen;
+      btn.textContent = isOpen ? 'Přečíst celý příběh' : 'Skrýt příběh';
+    });
+  });
+})();
+
+/* ── Pricing toggle (monthly / annual) ── */
+(function initPricingToggle() {
+  const togBtn    = document.getElementById('togBtn');
+  const togMonthly = document.getElementById('togMonthly');
+  const togAnnual  = document.getElementById('togAnnual');
+  const amounts    = document.querySelectorAll('.p-amt');
+  if (!togBtn || !amounts.length) return;
+
+  let isAnnual = false;
+
+  togBtn.addEventListener('click', () => {
+    isAnnual = !isAnnual;
+    togBtn.setAttribute('aria-checked', String(isAnnual));
+    togMonthly.classList.toggle('tog-active', !isAnnual);
+    togAnnual.classList.toggle('tog-active', isAnnual);
+
+    amounts.forEach(el => {
+      const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
+      if (val) el.textContent = val;
+    });
+  });
+})();
+
+/* ── Contact form ── */
+(function initContactForm() {
+  const form      = document.getElementById('contactForm');
+  const success   = document.getElementById('formSuccess');
+  const submitBtn = document.getElementById('submitBtn');
+  if (!form || !success || !submitBtn) return;
+
+  const validateField = (id, errorId, check, message) => {
+    const input = document.getElementById(id);
+    const error = document.getElementById(errorId);
+    if (!input || !error) return true;
+    const valid = check(input);
+    error.textContent = valid ? '' : message;
+    input.classList.toggle('error', !valid);
+    input.setAttribute('aria-invalid', String(!valid));
+    return valid;
+  };
+
+  const validators = [
+    () => validateField('cf-name', 'err-name',
+      el => el.value.trim().length >= 2,
+      'Zadejte prosím jméno (min. 2 znaky).'),
+    () => validateField('cf-phone', 'err-phone',
+      el => el.value.trim().length >= 9,
+      'Zadejte prosím telefonní číslo.'),
+    () => validateField('cf-biz', 'err-biz',
+      el => el.value.trim().length >= 2,
+      'Popište prosím váš business.'),
+    () => validateField('cf-email', 'err-email',
+      el => el.value.trim() === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()),
+      'Zadejte platnou e-mailovou adresu.'),
+    () => {
+      const gdpr  = document.getElementById('cf-gdpr');
+      const error = document.getElementById('err-gdpr');
+      if (!gdpr || !error) return true;
+      const valid = gdpr.checked;
+      error.textContent = valid ? '' : 'Pro odeslání je nutný souhlas.';
+      return valid;
+    },
+  ];
+
+  // Live validation on blur
+  ['cf-name', 'cf-phone', 'cf-biz', 'cf-email'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('blur', () => validators.forEach(v => v()));
+  });
+
+  const setLoading = (loading) => {
+    const text    = submitBtn.querySelector('.btn-text');
+    const spinner = submitBtn.querySelector('.btn-spinner');
+    submitBtn.disabled = loading;
+    if (text)    text.hidden    = loading;
+    if (spinner) spinner.hidden = !loading;
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const allValid = validators.every(v => v());
+    if (!allValid) {
+      const firstError = form.querySelector('.error, [aria-invalid="true"]');
+      firstError?.focus();
+      return;
+    }
+
+    setLoading(true);
+
+    const data = {
+      name:     document.getElementById('cf-name')?.value.trim()  ?? '',
+      phone:    document.getElementById('cf-phone')?.value.trim() ?? '',
+      business: document.getElementById('cf-biz')?.value.trim()   ?? '',
+      email:    document.getElementById('cf-email')?.value.trim() ?? '',
+    };
+
+    try {
+      const res = await fetch('https://formspree.io/f/xgvknrlo', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        form.hidden    = true;
+        success.hidden = false;
+        success.focus();
+      } else {
+        throw new Error('Server responded with ' + res.status);
+      }
+    } catch {
+      // Fallback: mailto in new tab
+      const subject = encodeURIComponent('Nová poptávka z webu – ' + data.name);
+      const body    = encodeURIComponent(
+        `Jméno: ${data.name}\nTelefon: ${data.phone}\nBusiness: ${data.business}\nE-mail: ${data.email || '–'}`
+      );
+      window.open(`mailto:adam.petrakk@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    } finally {
+      setLoading(false);
+    }
+  });
+})();
+
+/* ── Smooth scroll with navbar offset ── */
+(function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const navH = document.getElementById('navbar')?.offsetHeight ?? 68;
+      const top  = target.getBoundingClientRect().top + window.scrollY - navH - 12;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+})();

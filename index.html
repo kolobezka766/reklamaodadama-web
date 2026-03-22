@@ -4,57 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ═══ SEO & CRAWLABILITY ═══ -->
+  <!-- ═══ SEO ═══ -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  <title>Reklama Od Adama — Google reklamy pro malé firmy a živnostníky | Adam Petrák</title>
+  <title>Reklama Od Adama — Google a Meta reklamy pro živnostníky | Adam Petrák</title>
   <meta name="description" content="Google reklamy a Facebook reklamy pro živnostníky a malé firmy. Bez drahých agentur, bez cizích slov. Viditelnost na Googlu za 14 dní. Adam Petrák — 7 let praxe, 50+ klientů." />
-  <meta name="keywords" content="Google reklamy, Google Ads, Facebook reklamy, marketing pro živnostníky, malé firmy reklama, PPC reklama, online marketing" />
   <meta name="author" content="Adam Petrák" />
-
-  <!-- ═══ CANONICAL ═══ -->
   <link rel="canonical" href="https://reklamaodadama.cz/" />
 
-  <!-- ═══ OPEN GRAPH ═══ -->
+  <!-- ═══ Open Graph ═══ -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://reklamaodadama.cz/" />
   <meta property="og:title" content="Reklama Od Adama — Google reklamy pro malé firmy" />
-  <meta property="og:description" content="Google reklamy a Facebook reklamy pro živnostníky a malé firmy. Bez drahých agentur, bez cizích slov. Viditelnost na Googlu za 14 dní." />
+  <meta property="og:description" content="Google reklamy a Facebook reklamy pro živnostníky. Bez drahých agentur, bez cizích slov. Viditelnost na Googlu za 14 dní." />
   <meta property="og:image" content="https://reklamaodadama.cz/og-image.jpg" />
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:site_name" content="Reklama Od Adama" />
 
-  <!-- ═══ TWITTER CARD ═══ -->
+  <!-- ═══ Twitter Card ═══ -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Reklama Od Adama — Google reklamy pro malé firmy" />
-  <meta name="twitter:description" content="Google reklamy a Facebook reklamy pro živnostníky a malé firmy. Bez drahých agentur, bez cizích slov." />
+  <meta name="twitter:description" content="Google reklamy a Facebook reklamy pro živnostníky. Bez drahých agentur, bez cizích slov." />
   <meta name="twitter:image" content="https://reklamaodadama.cz/og-image.jpg" />
 
-  <!-- ═══ SCHEMA.ORG ═══ -->
+  <!-- ═══ Schema.org ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Reklama Od Adama",
-    "alternateName": "Adam Petrák",
-    "description": "Google reklamy a Facebook reklamy pro živnostníky a malé firmy. Bez drahých agentur, bez cizích slov.",
-    "url": "https://reklamaodadama.cz",
-    "telephone": "+420734699056",
-    "email": "adam@adampetrak.cz",
-    "founder": {
-      "@type": "Person",
-      "name": "Adam Petrák",
-      "url": "https://adampetrak.cz",
-      "jobTitle": "Marketingový specialista"
-    },
-    "areaServed": { "@type": "Country", "name": "CZ" },
-    "serviceType": ["Google Ads správa","Facebook Ads správa","Tvorba webových stránek","Online marketing"],
-    "priceRange": "3490 - 8490 CZK/měsíc",
-    "knowsLanguage": "cs",
-    "sameAs": ["https://adampetrak.cz"]
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://reklamaodadama.cz/#business",
+        "name": "Reklama Od Adama",
+        "description": "Správa Google Ads a Meta Ads pro živnostníky a malé firmy v České republice.",
+        "url": "https://reklamaodadama.cz/",
+        "telephone": "+420734699056",
+        "email": "adam.petrakk@gmail.com",
+        "founder": { "@type": "Person", "name": "Adam Petrák", "jobTitle": "PPC Specialista" },
+        "areaServed": { "@type": "Country", "name": "Czech Republic" },
+        "serviceType": ["Google Ads", "Meta Ads", "PPC správa", "Online reklama"],
+        "priceRange": "3490–8490 Kč/měsíc"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Jak rychle uvidím výsledky?", "acceptedAnswer": { "@type": "Answer", "text": "První výsledky přicházejí obvykle do 2–4 týdnů od spuštění kampaní." } },
+          { "@type": "Question", "name": "Kolik musím investovat do samotné reklamy?", "acceptedAnswer": { "@type": "Answer", "text": "Doporučený minimální reklamní budget je 5 000 Kč/měsíc." } },
+          { "@type": "Question", "name": "Musím podepisovat dlouhodobou smlouvu?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Spolupráci lze ukončit kdykoli s měsíční výpovědní lhůtou." } }
+        ]
+      }
+    ]
   }
   </script>
 
-  <!-- ═══ GOOGLE CONSENT MODE v2 ═══ -->
+  <!-- ═══ Google Consent Mode v2 ═══ -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
@@ -66,980 +68,952 @@
     gtag('js', new Date());
   </script>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- ═══ Fonty ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ═══ Styly ═══ -->
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230057FF'/><text x='8' y='24' font-family='Arial Black' font-size='18' font-weight='900' fill='white'>A</text></svg>" />
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     URGENCE BAR
-══════════════════════════════════════════ -->
-<div class="urgency-bar" id="urgencyBar">
-  <div class="urgency-inner">
-    <span class="urgency-dot"></span>
-    Přijímám max. 5 nových klientů měsíčně —&nbsp;<strong>zbývají 2 místa na duben</strong>
-    <a href="#konzultace" class="urgency-cta">Zajistit si místo</a>
+<!-- Scroll progress bar -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ════════════════ URGENCY BAR ════════════════ -->
+<div class="urgency-bar" id="urgencyBar" role="status">
+  <div class="urgency-bar__inner">
+    <span class="urgency-pulse" aria-hidden="true"></span>
+    <span id="urgencyText">Načítám&hellip;</span>
+    <a href="#konzultace" class="urgency-cta">Zajistit si místo &rarr;</a>
   </div>
-  <button class="urgency-close" id="urgencyClose" aria-label="Zavřít">&times;</button>
+  <button class="urgency-close" id="urgencyClose" aria-label="Zavřít upozornění">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
 </div>
 
-<!-- ══════════════════════════════════════════
-     NAVIGACE — max. 4 položky (Hick's Law)
-══════════════════════════════════════════ -->
-<nav class="navbar" id="navbar">
-  <div class="container nav-inner">
-    <a href="#" class="logo">Reklama <span>Od Adama</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#jak-to-funguje">Jak to funguje</a></li>
-      <li><a href="#reference">Reference</a></li>
-      <li><a href="#ceny">Ceny</a></li>
-      <li><a href="#konzultace">Kontakt</a></li>
-    </ul>
-    <a href="#konzultace" class="btn btn-nav">Konzultace zdarma</a>
-    <button class="hamburger" id="hamburger" aria-label="Otevřít menu">
+<!-- ════════════════ NAVBAR ════════════════ -->
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="#" class="navbar__logo" aria-label="Reklama od Adama — domů">
+      <span class="logo-mark" aria-hidden="true">A</span>
+      <span class="logo-text">Reklama <strong>od Adama</strong></span>
+    </a>
+    <nav class="navbar__nav" aria-label="Hlavní navigace">
+      <a href="#jak-to-funguje" class="nav-link">Jak to funguje</a>
+      <a href="#o-mne" class="nav-link">O mně</a>
+      <a href="#ceny" class="nav-link">Ceník</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+    <a href="#konzultace" class="btn btn--primary btn--sm nav-cta">Konzultace zdarma</a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
-</nav>
-
-<!-- ══════════════════════════════════════════
-     HERO — přímý, emocionální, jeden CTA
-══════════════════════════════════════════ -->
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="container hero-inner">
-
-    <div class="hero-tagline">
-      Jen to podstatné
-      <span class="hero-tagline-sep"></span>
-      Více zákazníků. Bez zbytečností.
-    </div>
-
-    <h1 class="hero-h1">
-      Nemáte zákazníky<br />z internetu?
-      <span class="highlight">Za pár tisíc to vyřeším.</span>
-    </h1>
-
-    <p class="hero-sub">
-      Postarám se o vaše reklamy na Googlu — jednoduše, bez cizích slov, s výsledky. Vy děláte svoji práci, já přivedu zákazníky.
-    </p>
-
-    <div class="hero-cta-wrap">
-      <a href="#konzultace" class="btn btn-accent btn-hero">
-        Chci víc zákazníků →
-        <span class="btn-sub">30 minut zdarma · bez závazku</span>
-      </a>
-      <a href="tel:+420734699056" class="hero-tel">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.21 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        +420 734 699 056
-      </a>
-    </div>
-
-    <!-- Odstraňuje 3 nejčastější obavy hned pod CTA -->
-    <div class="hero-guarantees">
-      <span><span class="hg-check">✓</span> Bez závazné smlouvy</span>
-      <span><span class="hg-check">✓</span> Platíte přímo Googlu</span>
-      <span><span class="hg-check">✓</span> Výsledky nebo vrátím peníze</span>
-    </div>
-
-    <div class="hero-trust">
-      <div class="trust-item">
-        <span class="trust-num" data-target="50">0</span><span class="trust-plus">+</span>
-        <span class="trust-lbl">spokojených klientů</span>
-      </div>
-      <div class="trust-sep"></div>
-      <div class="trust-item">
-        <span class="trust-num">4,8×</span>
-        <span class="trust-lbl">průměrná návratnost reklamy*</span>
-      </div>
-      <div class="trust-sep"></div>
-      <div class="trust-item">
-        <span class="trust-num">14</span><span class="trust-plus"> dní</span>
-        <span class="trust-lbl">do spuštění reklam</span>
-      </div>
-      <div class="trust-sep"></div>
-      <div class="trust-item">
-        <span class="trust-num">7</span><span class="trust-plus"> let</span>
-        <span class="trust-lbl">praxe v marketingu</span>
-      </div>
-    </div>
-    <p class="hero-disclaimer">* Průměrný výsledek klientů. Individuální výsledky se mohou lišit v závislosti na oboru, rozpočtu a trhu.</p>
-
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#jak-to-funguje" class="mobile-link">Jak to funguje</a>
+    <a href="#o-mne" class="mobile-link">O mně</a>
+    <a href="#ceny" class="mobile-link">Ceník</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#konzultace" class="mobile-link mobile-link--cta">Konzultace zdarma &rarr;</a>
   </div>
-</section>
+</header>
 
-<!-- ══════════════════════════════════════════
-     SOCIÁLNÍ DŮKAZ — KLIENTI
-══════════════════════════════════════════ -->
-<section class="proof-bar">
-  <div class="container">
-    <p class="proof-bar-label">Pracuji s firmami z celé ČR</p>
-    <div class="proof-logos-wrap" aria-hidden="true">
-      <div class="proof-logos">
-        <div class="proof-item">George Gina &amp; Lucy</div>
-        <div class="proof-item">ElektroJihlava</div>
-        <div class="proof-item">KlinikaPetrykowski</div>
-        <div class="proof-item">ZIDLESTOLY</div>
-        <div class="proof-item">MagnusPro</div>
-        <div class="proof-item">InfinityWorks</div>
-        <div class="proof-item">Kosmetika Jihlava</div>
-        <div class="proof-item">ajeVyklizeno</div>
-        <div class="proof-item">George Gina &amp; Lucy</div>
-        <div class="proof-item">ElektroJihlava</div>
-        <div class="proof-item">KlinikaPetrykowski</div>
-        <div class="proof-item">ZIDLESTOLY</div>
-        <div class="proof-item">MagnusPro</div>
-        <div class="proof-item">InfinityWorks</div>
-        <div class="proof-item">Kosmetika Jihlava</div>
-        <div class="proof-item">ajeVyklizeno</div>
-      </div>
-    </div>
-  </div>
-</section>
+<main>
 
-<!-- ══════════════════════════════════════════
-     PROBLÉM — emocionální intro + 4 karty
-══════════════════════════════════════════ -->
-<section class="problem" id="problem">
-  <div class="container">
-    <div class="section-tag">Znáte to?</div>
-    <h2 class="section-h2">Proč malé firmy přicházejí o zákazníky z&nbsp;internetu každý den</h2>
-    <p class="pain-intro">
-      Platíte faktury, makáte na zakázkách — a na marketing nezbývá ani čas ani nervy. Přitom zákazníci vás hledají na Googlu každý den. Jen vás nenajdou.
-    </p>
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <div class="hero__bg-grid" aria-hidden="true"></div>
+    <div class="container hero__inner">
 
-    <div class="pain-grid">
-      <div class="pain-card fade-in">
-        <div class="pain-n">01</div>
-        <h3>Jste neviditelní na Googlu</h3>
-        <p>Lidé hledají vaše služby každý den — ale najdou konkurenci, ne vás. Přitom stačilo být na správném místě ve správný čas.</p>
-      </div>
-      <div class="pain-card fade-in">
-        <div class="pain-n">02</div>
-        <h3>Peníze za reklamu zmizí bez výsledků</h3>
-        <p>Zkoušeli jste reklamy sami, ale zákazníci nepřišli. Špatně nastavená reklama snadno spálí 5 000 Kč měsíčně — aniž by zazvonil telefon.</p>
-      </div>
-      <div class="pain-card fade-in">
-        <div class="pain-n">03</div>
-        <h3>Agentury jsou předražené a vzdálené</h3>
-        <p>Velké agentury chtějí 20 000–60 000 Kč měsíčně a neznají vaše podnikání. Pro živnostníka je to ztráta peněz i nervů.</p>
-      </div>
-      <div class="pain-card fade-in">
-        <div class="pain-n">04</div>
-        <h3>Nemáte čas ani chuť se tím zabývat</h3>
-        <p>Jste řemeslník, podnikatel, odborník — ne reklamní specialista. Máte dost své práce. Ale bez reklamy zákazníci nepřijdou.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     MID-CTA #1
-══════════════════════════════════════════ -->
-<section class="mid-cta">
-  <div class="container mid-cta-in">
-    <div class="mid-cta-text">
-      <strong>Zjistěte, kolik zákazníků vás každý měsíc hledá na Googlu — a proč nepřicházejí.</strong>
-      <span>Bezplatná konzultace 30 minut — bez závazku, bez nesmyslů.</span>
-    </div>
-    <a href="#konzultace" class="btn btn-accent">Chci konzultaci zdarma</a>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     ŘEŠENÍ
-══════════════════════════════════════════ -->
-<section class="solution" id="reseni">
-  <div class="container solution-in">
-    <div class="solution-text">
-      <div class="section-tag">Vaše řešení</div>
-      <h2 class="section-h2">Reklama, která pracuje za vás — zatímco vy děláte svoji práci</h2>
-      <p>Nemusíte rozumět tomu, jak Google reklamy fungují, jak se nastavují nebo jak se vyhodnocují. Od toho jsem tady já.</p>
-      <p>Postarám se o veškerou vaši reklamu na internetu — od nastavení přes průběžné vylepšování po měsíční přehledy v srozumitelné češtině. Vy jen sledujete, jak přibývají zákazníci.</p>
-      <ul class="benefits-list">
-        <li><span class="chk">✓</span> Google reklamy nastavené správně od prvního dne.</li>
-        <li><span class="chk">✓</span> Každá koruna sledovaná — víte přesně, za co platíte.</li>
-        <li><span class="chk">✓</span> Web, ze kterého zákazníci píší a volají.</li>
-        <li><span class="chk">✓</span> Měsíční přehled bez cizích slov — jen čísla, která vám něco říkají.</li>
-        <li><span class="chk">✓</span> Jedna až dvě osoby za vším — ne anonymní agentura.</li>
-        <li><span class="chk">✓</span> Google reklama i Facebook reklama.</li>
-        <li><span class="chk">✓</span> Více než 21 900 hod. praxe v marketingu pro Vás.</li>
-      </ul>
-      <a href="#konzultace" class="btn btn-primary">Chci bezplatnou konzultaci</a>
-    </div>
-    <div class="solution-cards">
-      <div class="sol-card sol-c1 fade-in">
-        <div class="sol-lbl">Google reklamy</div>
-        <div class="sol-num">+340 %</div>
-        <div class="sol-sub">růst obratu (ZidleStoly.cz)</div>
-      </div>
-      <div class="sol-card sol-c2 fade-in">
-        <div class="sol-lbl">Návratnost reklamy</div>
-        <div class="sol-num">2 833 %</div>
-        <div class="sol-sub">nejvyšší dosažený ROAS</div>
-      </div>
-      <div class="sol-card sol-c3 fade-in">
-        <div class="sol-lbl">Vygenerovaný obrat</div>
-        <div class="sol-num">1,65M EUR</div>
-        <div class="sol-sub">George Gina &amp; Lucy</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     JAK TO FUNGUJE
-══════════════════════════════════════════ -->
-<section class="steps-section" id="jak-to-funguje">
-  <div class="container">
-    <div class="section-tag">Postup</div>
-    <h2 class="section-h2">Od prvního hovoru k prvním zákazníkům za 14 dní</h2>
-    <p class="section-desc">Jednoduchý postup bez zbytečné byrokracie.</p>
-
-    <div class="steps-row">
-      <div class="step-box fade-in">
-        <div class="step-n">01</div>
-        <h3>Bezplatná konzultace — 30 minut</h3>
-        <p>Probereme vaše podnikání a cíle. Zjistíme, kolik zákazníků vás hledá na Googlu každý měsíc a proč k vám nepřicházejí. Bez závazku, zcela zdarma.</p>
-        <div class="step-badge">30 minut online nebo po telefonu</div>
-      </div>
-      <div class="step-arrow" aria-hidden="true"></div>
-      <div class="step-box fade-in">
-        <div class="step-n">02</div>
-        <h3>Plán přímo pro Vás</h3>
-        <p>Připravím konkrétní plán — jaké reklamy, jaký rozpočet, na koho se zaměřit. Uvidíte přesně, co a proč budu dělat, ještě před podpisem smlouvy.</p>
-        <div class="step-badge">Připravím za 2–3 dny</div>
-      </div>
-      <div class="step-arrow" aria-hidden="true"></div>
-      <div class="step-box fade-in">
-        <div class="step-n">03</div>
-        <h3>Spuštění a průběžné zlepšování</h3>
-        <p>Reklamy spustím, sleduji každý den a průběžně vylepšuji. Každý měsíc dostanete srozumitelný přehled — žádná cizí slova, jen čísla, která vám něco říkají.</p>
-        <div class="step-badge">Průběžně každý měsíc</div>
-      </div>
-    </div>
-
-    <div class="guarantee-row fade-in">
-      <div class="guarantee-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <p><strong>Spokojenost na prvním místě:</strong> Pokud po prvních 3 měsících nebudete spokojeni s výsledky a reklamy nebudou fungovat dle dohodnutých cílů, vrátím vám posledních 30 dní správy zdarma. Vždy si předem nastavíme jasná měřitelná očekávání.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     O MNĚ — osobní, lidský, ne korporátní
-══════════════════════════════════════════ -->
-<section class="about" id="o-mne">
-  <div class="container about-in">
-    <div class="about-photo-col">
-      <div class="about-photo">
-        <img src="adam-petrak.png" alt="Adam Petrák — marketingový specialista" class="about-photo-img" />
-      </div>
-      <div class="about-certs">
-        <div class="cert-title">Certifikace</div>
-        <div class="cert-list">
-          <span class="cert">Google Ads</span>
-          <span class="cert">Meta Ads</span>
-          <span class="cert">LinkedIn Ads</span>
-          <span class="cert">TikTok Ads</span>
-          <span class="cert">Sklik</span>
-          <span class="cert">Pinterest Ads</span>
+      <div class="hero__content">
+        <div class="hero__badge fade-up">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Přes 50 spokojených klientů &middot; 7 let praxe
         </div>
-      </div>
-    </div>
-    <div class="about-text">
-      <div class="section-tag">O mně</div>
-      <h2 class="section-h2">Nejsem agentura. Jsem Adam.</h2>
-      <p class="about-motto">"Nedávám jen rady — sedím u počítače a dělám výsledky. Každý den."</p>
-      <p>Za 7 let jsem pomohl 50+ firmám vydělat stovky milionů z online reklamy — od malých živnostníků po velké e-shopy a kliniky. Vím, co funguje a co je jen ztráta peněz.</p>
-      <p>Nejsem konzultant, který napíše strategii do šuplíku. Spravuji kampaně, optimalizuji, reportuji — a přitom vždy komunikuji přímo s vámi, bez prostředníků.</p>
-      <p>Po setkání s mnoha živnostníky jsem se rozhodl věnovat právě vám — lidem, kteří přinášejí světu skutečnou hodnotu a zaslouží si, aby je zákazníci našli.</p>
 
-      <div class="about-stats">
-        <div class="about-stat fade-in">
-          <span class="astat-num">7 let</span>
-          <span class="astat-lbl">v oboru</span>
+        <h1 id="hero-heading" class="hero__title fade-up">
+          Nemáte zákazníky<br>z internetu?<br>
+          <span class="hero__title-accent">Za pár tisíc to vyřeším.</span>
+        </h1>
+
+        <p class="hero__subtitle fade-up">
+          Postarám se o vaše Google a Meta reklamy — jednoduše, bez cizích slov, s měřitelnými výsledky. Vy děláte svoji práci. Já přivedu zákazníky.
+        </p>
+
+        <div class="hero__actions fade-up">
+          <a href="#konzultace" class="btn btn--cta btn--lg">
+            Chci víc zákazníků
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+420734699056" class="hero__tel">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.21 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            +420 734 699 056
+          </a>
         </div>
-        <div class="about-stat fade-in">
-          <span class="astat-num">50+</span>
-          <span class="astat-lbl">firem posunuto vpřed</span>
-        </div>
-        <div class="about-stat fade-in">
-          <span class="astat-num">21 920</span>
-          <span class="astat-lbl">hodin praxe</span>
+
+        <div class="hero__guarantees fade-up">
+          <span class="gpill">Bez závazné smlouvy</span>
+          <span class="gpill">Platíte přímo Googlu</span>
+          <span class="gpill">Výsledky nebo vrátím peníze</span>
         </div>
       </div>
 
-      <ul class="about-list">
-        <li><span class="chk">✓</span> Výsledky, ne výmluvy — pokud kampaně nefungují, zjistím proč a opravím to.</li>
-        <li><span class="chk">✓</span> Osobní přístup — nejste číslo v databázi. Znám vaše podnikání, zákazníky i konkurenci.</li>
-        <li><span class="chk">✓</span> Průhledné reporty — každý měsíc víte přesně, co se děje s každou korunou.</li>
-        <li><span class="chk">✓</span> Omezená kapacita — nepřijímám více klientů, než mohu dobře obsluhovat.</li>
-      </ul>
-
-      <a href="https://adampetrak.cz" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Více o mně na adampetrak.cz</a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     REFERENCE — s rozklikatelnými příběhy
-══════════════════════════════════════════ -->
-<section class="testimonials" id="reference">
-  <div class="container">
-    <div class="section-tag">Reference</div>
-    <h2 class="section-h2">Co říkají moji klienti</h2>
-    <p class="section-desc">Skutečné výsledky od skutečných lidí. Klikněte na kartu a přečtěte si celý příběh.</p>
-
-    <div class="testi-grid">
-
-      <!-- Miroslav — instalatér (nejrelevantější pro živnostníka) -->
-      <div class="testi-card testi-expandable fade-in">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Zkoušel jsem Google reklamy sám a topil jsem 4 000 Kč měsíčně bez výsledků. Za první 3 měsíce spolupráce se vše zaplatilo samo a teď mám plný diář na 2 měsíce dopředu.</p>
-        <div class="testi-author">
-          <div class="testi-av">M</div>
-          <div>
-            <div class="testi-name">Miroslav K.</div>
-            <div class="testi-role">Instalatér, Praha</div>
+      <!-- Floating results card — real, specific numbers (not generic) -->
+      <aside class="hero__card fade-up" aria-label="Ukázka výsledků klientů">
+        <div class="hcard__header">
+          <div class="hcard__live">
+            <span class="hcard__dot" aria-hidden="true"></span>
+            Výsledky klientů
           </div>
         </div>
-        <div class="testi-badge">+3 zakázky za měsíc navíc</div>
-        <button class="testi-toggle" aria-expanded="false">Přečíst celý příběh ▾</button>
-        <div class="testi-story">
-          <p>Miroslav přišel ke mně s tím, že mu reklamy na Googlu nefungují — platil jsem 4 000 Kč měsíčně a telefon nezvonil. Po auditu jsem zjistil, že jeho reklamy cílily na celé Česko místo Prahy, a klíčová slova byla nastavená na obecné fráze, které nikdo nehledal.</p>
-          <p>Za 2 týdny jsem přenastavil kampaně na lokální cílení, vybral 30 konkrétních frází, které lidé v Praze skutečně hledají, a upravil web tak, aby zákazník hned věděl, kam zavolat.</p>
-          <p><strong>Výsledek po 3 měsících:</strong> 3 nové zakázky za měsíc navíc, plný diář na 2 měsíce, správa reklam se zaplatila za první měsíc.</p>
-        </div>
-      </div>
-
-      <!-- Petra — klinika (featured) -->
-      <div class="testi-card testi-featured testi-expandable fade-in">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Konečně marketér, který opravdu rozumí číslům. Výsledky kampaní vystřelily nahoru a začali jsme škálovat způsobem, který jsme si ani neuměli představit.</p>
-        <div class="testi-author">
-          <div class="testi-av">P</div>
-          <div>
-            <div class="testi-name">Petra M.</div>
-            <div class="testi-role">CEO, estetická klinika</div>
-          </div>
-        </div>
-        <div class="testi-badge">ROAS 800 %+, 3 290 nových klientů</div>
-        <button class="testi-toggle" aria-expanded="false">Přečíst celý příběh ▾</button>
-        <div class="testi-story">
-          <p>Estetická klinika Petry bojovala s vysokými náklady na nové klienty. Předchozí agentura fakturovala 25 000 Kč měsíčně, ale výsledky nebyly měřitelné — dostávali „krásné reporty", ale klientů nepřibývalo.</p>
-          <p>Postavili jsme celou strukturu kampaní od nuly: Google Search pro aktivní hledání, Remarketing pro lidi, kteří navštívili web, a Facebook kampaně pro budování povědomí v regionu.</p>
-          <p><strong>Výsledek za 6 měsíců:</strong> ROAS 800 %+, 3 290 nových klientů, náklady na akvizici klesly o 62 % při zachování kvality klientů.</p>
-        </div>
-      </div>
-
-      <!-- Tomáš — autoservis -->
-      <div class="testi-card testi-expandable fade-in">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Jako malý autoservis jsme nemohli konkurovat velkým sítím. Teď se zobrazujeme jako první v Googlu v okruhu 20 km a máme o 40 procent více nových zákazníků než loni.</p>
-        <div class="testi-author">
-          <div class="testi-av">T</div>
-          <div>
-            <div class="testi-name">Tomáš B.</div>
-            <div class="testi-role">Majitel autoservisu, Ostrava</div>
-          </div>
-        </div>
-        <div class="testi-badge">+40 % nových zákazníků</div>
-        <button class="testi-toggle" aria-expanded="false">Přečíst celý příběh ▾</button>
-        <div class="testi-story">
-          <p>Tomáš měl skvělý servis, ale zákazníci ho nenašli — na Googlu se na první stránce zobrazovaly velké řetězce, on byl na straně 3. Sám si reklamy nastavil jednou, ale výsledky přišly minimální.</p>
-          <p>Poradil jsem lokální Google Ads strategii zaměřenou na Ostravu a okolí 20 km, přidali jsme Google Business Profile optimalizaci a web jsme doplnili o stránky pro konkrétní služby (výměna oleje, STK příprava, zimní přezutí).</p>
-          <p><strong>Výsledek po 4 měsících:</strong> 1. nebo 2. místo na Googlu pro 15 klíčových frází v lokalitě, +40 % nových zákazníků, ROI správy přes 600 %.</p>
-        </div>
-      </div>
-
-      <!-- Kateřina — účetní -->
-      <div class="testi-card testi-expandable fade-in">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Oceňuji hlavně to, že mi vše vysvětlí normálně česky. Vím přesně, za co platím a co to přináší. To u agentur nikdy nebylo — dostávala jsem jen PDF plné slov, kterým jsem nerozuměla.</p>
-        <div class="testi-author">
-          <div class="testi-av">K</div>
-          <div>
-            <div class="testi-name">Kateřina M.</div>
-            <div class="testi-role">Účetní firma, Plzeň</div>
-          </div>
-        </div>
-        <div class="testi-badge">3,2× více zákazníků</div>
-        <button class="testi-toggle" aria-expanded="false">Přečíst celý příběh ▾</button>
-        <div class="testi-story">
-          <p>Kateřina provozovala účetní firmu v Plzni a přišla ke mně po zkušenosti s velkou agenturou — platila 18 000 Kč měsíčně, dostávala složité reporty a nevěděla, jestli reklamy vůbec fungují.</p>
-          <p>Zjednodušili jsme vše na minimum: jedna Google kampaň zaměřená na Plzeň a okolí, jasné cílové stránky pro každý typ klienta (OSVČ, s.r.o., start-up), měsíční report na jedné stránce A4.</p>
-          <p><strong>Výsledek po 5 měsících:</strong> 3,2× více nových klientů při třetinových nákladech oproti předchozí agentuře. Kateřina ví každý měsíc přesně, za co platí.</p>
-        </div>
-      </div>
-
-      <!-- Martin — e-shop nábytek -->
-      <div class="testi-card testi-expandable fade-in">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Adam ztrojnásobil příjmy z online marketingu za 3 měsíce. Přístup byl naprosto profesionální — vždy věděl, co dělá a proč.</p>
-        <div class="testi-author">
-          <div class="testi-av">M</div>
-          <div>
-            <div class="testi-name">Martin K.</div>
-            <div class="testi-role">Majitel e-shopu, nábytek</div>
-          </div>
-        </div>
-        <div class="testi-badge">3× více příjmů za 3 měsíce</div>
-        <button class="testi-toggle" aria-expanded="false">Přečíst celý příběh ▾</button>
-        <div class="testi-story">
-          <p>Martin provozoval e-shop se židlemi a stoly — ZIDLESTOLY.cz. Měl slušný web, ale reklamy generovaly tržby jen 2–3× nad náklady. Věděl, že to jde lépe, ale nevěděl jak.</p>
-          <p>Kompletně přestavěli jsme Google Shopping kampaně, zavedli dynamický remarketing na zákazníky, kteří si prohlédli produkty, a optimalizovali jsme produktové stránky pro lepší konverzi.</p>
-          <p><strong>Výsledek za 3 měsíce:</strong> +340 % růst obratu, ROAS přes 800 %, e-shop se stal hlavním zdrojem příjmů místo kamenné prodejny.</p>
-        </div>
-      </div>
-
-      <!-- Jakub — finance -->
-      <div class="testi-card testi-expandable fade-in">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testi-text">Adamův přístup je jedinečný — kombinuje strategické myšlení s reálnou prací. Leady z jeho kampaní jsou kvalitní a skutečně se mění v zakázky.</p>
-        <div class="testi-author">
-          <div class="testi-av">J</div>
-          <div>
-            <div class="testi-name">Jakub R.</div>
-            <div class="testi-role">Obchodní ředitel, finance</div>
-          </div>
-        </div>
-        <div class="testi-badge">7 400+ kvalitních poptávek</div>
-        <button class="testi-toggle" aria-expanded="false">Přečíst celý příběh ▾</button>
-        <div class="testi-story">
-          <p>Finanční firma Jakuba potřebovala kvalitní leady — ne klikání bez výsledků. Předchozí kampaně přinášely hodně prokliků, ale málo reálných poptávek od lidí, kteří skutečně chtěli finanční poradenství.</p>
-          <p>Zaměřili jsme se na kvalitu nad kvantitu: přísné cílení, negativní klíčová slova, optimalizace konverzního formuláře a A/B testování reklamních textů. Každý lead byl sledován od prvního kliknutí po podpis smlouvy.</p>
-          <p><strong>Výsledek za 12 měsíců:</strong> 7 400+ kvalitních poptávek, konverzní poměr z leadu na klienta vzrostl z 8 % na 23 %, náklady na jednoho klienta klesly o 47 %.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     CENY — jeden doporučený, anchoring
-══════════════════════════════════════════ -->
-<section class="pricing" id="ceny">
-  <div class="container">
-    <div class="section-tag">Ceny</div>
-    <h2 class="section-h2">Přehledné ceny bez skrytých poplatků</h2>
-    <p class="section-desc">Peníze za reklamu (Google, Facebook) platíte přímo nim — nad rámec ceny balíčku a vždy pod vaší kontrolou.</p>
-
-    <!-- Kapacita urgency -->
-    <div class="pricing-capacity">
-      <span class="cap-dot"></span>
-      Přijímám max. <strong>5 nových klientů měsíčně</strong> — teď zbývají 2 místa
-    </div>
-
-    <div class="pricing-toggle">
-      <span class="tog-lbl active" id="tog-monthly">Každý měsíc</span>
-      <div class="tog-switch" id="tog-btn" role="switch" aria-checked="false">
-        <div class="tog-ball"></div>
-      </div>
-      <span class="tog-lbl" id="tog-annual">Ročně <span class="tog-badge">-15 %</span></span>
-    </div>
-
-    <div class="pricing-grid">
-
-      <!-- ZÁKLAD -->
-      <div class="p-card fade-in">
-        <div class="p-head">
-          <div class="p-name">Základ</div>
-          <div class="p-desc">Pro ty, kteří chtějí začít chytře a bez rizika</div>
-          <div class="p-price">
-            <span class="p-amt" data-monthly="3 490" data-annual="2 967">3 490</span>
-            <span class="p-cur">Kč / měs.</span>
-          </div>
-          <div class="p-note">Závazek 3 měsíce &middot; + peníze na reklamu od 2 000 Kč / měs.</div>
-          <div class="p-anchor">≈ méně než jedna zmeškaná zakázka</div>
-        </div>
-        <ul class="p-feats">
-          <li><span class="fc">✓</span> Správa Google reklam (jedna kampaň)</li>
-          <li><span class="fc">✓</span> Úvodní nastavení a kontrola</li>
-          <li><span class="fc">✓</span> Výběr toho, co lidi hledají (až 50 výrazů)</li>
-          <li><span class="fc">✓</span> Měsíční přehled výsledků</li>
-          <li><span class="fc">✓</span> Emailová podpora (odpověď do 48 hodin)</li>
-          <li><span class="fc">✓</span> Sledování, kolik lidí zavolalo nebo napsalo</li>
-          <li class="feat-off"><span class="fx">✗</span> Tvorba webu</li>
-          <li class="feat-off"><span class="fx">✗</span> Facebook reklamy</li>
+        <ul class="hcard__list">
+          <li class="hcard__item">
+            <span class="hcard__client">ZidleStoly.cz</span>
+            <span class="hcard__metric pos">+340 % obrat</span>
+          </li>
+          <li class="hcard__item">
+            <span class="hcard__client">Klinika Petrykowski</span>
+            <span class="hcard__metric pos">ROAS 800 %+</span>
+          </li>
+          <li class="hcard__item">
+            <span class="hcard__client">George Gina &amp; Lucy</span>
+            <span class="hcard__metric pos">1,65M EUR</span>
+          </li>
+          <li class="hcard__item">
+            <span class="hcard__client">Instalatér M.K., Praha</span>
+            <span class="hcard__metric pos">Plný diář na 2 měs.</span>
+          </li>
         </ul>
-        <div class="p-footer">
-          <a href="#konzultace" class="btn btn-outline btn-full">Začít se Základem</a>
+        <div class="hcard__stats">
+          <div class="hcard__stat"><strong>50+</strong><span>klientů</span></div>
+          <div class="hcard__stat"><strong>4,8×</strong><span>prům. ROAS</span></div>
+          <div class="hcard__stat"><strong>14 dní</strong><span>do start</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="hero__stats-bar">
+      <div class="container hero__stats-inner">
+        <div class="hstat">
+          <span class="hstat__num" data-count="50">0</span><span class="hstat__suf">+</span>
+          <span class="hstat__lbl">spokojených klientů</span>
+        </div>
+        <div class="hstat__sep" aria-hidden="true"></div>
+        <div class="hstat">
+          <span class="hstat__num hstat__num--static">4,8×</span>
+          <span class="hstat__lbl">průměrná návratnost reklamy*</span>
+        </div>
+        <div class="hstat__sep" aria-hidden="true"></div>
+        <div class="hstat">
+          <span class="hstat__num" data-count="14">0</span><span class="hstat__suf"> dní</span>
+          <span class="hstat__lbl">do spuštění reklam</span>
+        </div>
+        <div class="hstat__sep" aria-hidden="true"></div>
+        <div class="hstat">
+          <span class="hstat__num" data-count="7">0</span><span class="hstat__suf"> let</span>
+          <span class="hstat__lbl">praxe v marketingu</span>
         </div>
       </div>
+    </div>
+    <p class="hero__disclaimer container">* Průměrný výsledek klientů. Individuální výsledky se mohou lišit v závislosti na oboru, rozpočtu a trhu.</p>
+  </section>
 
-      <!-- RUST — doporučený -->
-      <div class="p-card p-featured fade-in">
-        <div class="p-badge">Nejoblíbenější · Doporučuji pro začátek</div>
-        <div class="p-head">
-          <div class="p-name">Rust</div>
-          <div class="p-desc">Kompletní reklama na internetu včetně webu</div>
-          <div class="p-price">
-            <span class="p-amt" data-monthly="5 490" data-annual="4 667">5 490</span>
-            <span class="p-cur">Kč / měs.</span>
-          </div>
-          <div class="p-note">Závazek 6 měsíců &middot; + peníze na reklamu od 3 000 Kč / měs.</div>
-          <div class="p-anchor">≈ cena jednoho nevyřízeného zákazníka</div>
+  <!-- ════════════════ PROOF BAR ════════════════ -->
+  <section class="proof-bar" aria-label="Klienti">
+    <div class="proof-bar__label">Pracuji s firmami z celé ČR</div>
+    <div class="proof-ticker-wrap" aria-hidden="true">
+      <div class="proof-ticker">
+        <span>George Gina &amp; Lucy</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>ElektroJihlava</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>Klinika Petrykowski</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>ZIDLESTOLY.cz</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>MagnusPro</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>InfinityWorks</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>Kosmetika Jihlava</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>ajeVyklizeno</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <!-- Duplicate for seamless loop -->
+        <span>George Gina &amp; Lucy</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>ElektroJihlava</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>Klinika Petrykowski</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>ZIDLESTOLY.cz</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>MagnusPro</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>InfinityWorks</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>Kosmetika Jihlava</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+        <span>ajeVyklizeno</span>
+        <span class="dot" aria-hidden="true">&bull;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PROBLEM ════════════════ -->
+  <section class="problem" id="problem" aria-labelledby="problem-heading">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Znáte to?</span>
+        <h2 id="problem-heading">Proč malé firmy přicházejí o zákazníky z internetu každý den</h2>
+        <p>Platíte faktury, makáte na zakázkách — a na marketing nezbývá ani čas ani nervy. Přitom zákazníci vás hledají na Googlu každý den. Jen vás nenajdou.</p>
+      </div>
+      <div class="problem__grid">
+        <div class="problem-card fade-up">
+          <div class="problem-card__num" aria-hidden="true">01</div>
+          <h3>Jste neviditelní na Googlu</h3>
+          <p>Lidé hledají vaše služby každý den — ale najdou konkurenci, ne vás. Přitom stačilo být na správném místě ve správný čas.</p>
         </div>
-        <ul class="p-feats">
-          <li><span class="fc">✓</span> Správa Google reklam (až 3 kampaně)</li>
-          <li><span class="fc">✓</span> <strong>Profesionální web zdarma v ceně</strong></li>
-          <li><span class="fc">✓</span> Výběr toho, co lidi hledají (až 150 výrazů)</li>
-          <li><span class="fc">✓</span> Měsíční přehled + plán na další měsíc</li>
-          <li><span class="fc">✓</span> Videohovor každý měsíc (30 minut)</li>
-          <li><span class="fc">✓</span> Reklama na lidi, kteří váš web navštívili</li>
-          <li><span class="fc">✓</span> Testování různých variant reklam</li>
-          <li><span class="fc">✓</span> Email i telefon (do 24 hodin)</li>
+        <div class="problem-card fade-up">
+          <div class="problem-card__num" aria-hidden="true">02</div>
+          <h3>Peníze za reklamu zmizí bez výsledků</h3>
+          <p>Zkoušeli jste reklamy sami, ale zákazníci nepřišli. Špatně nastavená reklama snadno spálí 5 000 Kč měsíčně — aniž by zazvonil telefon.</p>
+        </div>
+        <div class="problem-card fade-up">
+          <div class="problem-card__num" aria-hidden="true">03</div>
+          <h3>Agentury jsou předražené a vzdálené</h3>
+          <p>Velké agentury chtějí 20 000–60 000 Kč měsíčně a neznají vaše podnikání. Pro živnostníka je to ztráta peněz i nervů.</p>
+        </div>
+        <div class="problem-card fade-up">
+          <div class="problem-card__num" aria-hidden="true">04</div>
+          <h3>Nemáte čas ani chuť se tím zabývat</h3>
+          <p>Jste řemeslník, podnikatel, odborník — ne reklamní specialista. Máte dost své práce. Ale bez reklamy zákazníci nepřijdou.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ SOLUTION ════════════════ -->
+  <section class="solution" id="reseni" aria-labelledby="solution-heading">
+    <div class="container solution__inner">
+      <div class="solution__text fade-up">
+        <span class="section-tag">Vaše řešení</span>
+        <h2 id="solution-heading">Reklama, která pracuje za vás — zatímco vy děláte svoji práci</h2>
+        <p>Nemusíte rozumět tomu, jak Google reklamy fungují. Od toho jsem tady já. Postarám se o veškerou vaši reklamu — od nastavení přes průběžné vylepšování po měsíční přehledy v srozumitelné češtině.</p>
+        <ul class="benefit-list">
+          <li>Google a Meta reklamy nastavené správně od prvního dne</li>
+          <li>Každá koruna sledovaná — víte přesně, za co platíte</li>
+          <li>Měsíční přehled bez cizích slov — jen čísla, která vám říkají, co potřebujete vědět</li>
+          <li>Průběžná optimalizace, ne jen nastavení a zapomenout</li>
+          <li>Jedna nebo dvě osoby za vším — ne anonymní agentura</li>
+          <li>Google i Facebook reklama v jednom balíčku</li>
         </ul>
-        <div class="p-footer">
-          <a href="#konzultace" class="btn btn-primary btn-full">Chci balíček Rust</a>
-          <div class="p-saving">Ušetříte oproti agentuře: <strong>až 15 000 Kč / měs.</strong></div>
+        <a href="#konzultace" class="btn btn--primary">Chci bezplatnou konzultaci</a>
+      </div>
+      <div class="solution__cards">
+        <div class="result-card result-card--blue fade-up">
+          <div class="result-card__label">Google reklamy</div>
+          <div class="result-card__num">+340 %</div>
+          <div class="result-card__sub">růst obratu &middot; ZidleStoly.cz</div>
+        </div>
+        <div class="result-card result-card--dark fade-up">
+          <div class="result-card__label">Nejvyšší dosažený ROAS</div>
+          <div class="result-card__num">2 833 %</div>
+          <div class="result-card__sub">návratnost reklamních výdajů</div>
+        </div>
+        <div class="result-card result-card--orange fade-up">
+          <div class="result-card__label">Vygenerovaný obrat</div>
+          <div class="result-card__num">1,65M EUR</div>
+          <div class="result-card__sub">George Gina &amp; Lucy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ HOW IT WORKS ════════════════ -->
+  <section class="steps" id="jak-to-funguje" aria-labelledby="steps-heading">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Postup</span>
+        <h2 id="steps-heading">Od prvního hovoru k prvním zákazníkům za 14 dní</h2>
+        <p>Jednoduchý postup bez zbytečné byrokracie.</p>
+      </div>
+      <div class="steps__row">
+        <div class="step fade-up">
+          <div class="step__num" aria-hidden="true">01</div>
+          <div class="step__content">
+            <h3>Bezplatná konzultace</h3>
+            <p>Probereme vaše podnikání a cíle. Zjistíme, kolik zákazníků vás hledá na Googlu každý měsíc a proč k vám nepřicházejí. Bez závazku, zcela zdarma.</p>
+            <div class="step__badge">30 minut online nebo po telefonu</div>
+          </div>
+        </div>
+        <div class="step__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="step fade-up">
+          <div class="step__num" aria-hidden="true">02</div>
+          <div class="step__content">
+            <h3>Plán přímo pro vás</h3>
+            <p>Připravím konkrétní plán — jaké reklamy, jaký rozpočet, na koho se zaměřit. Uvidíte přesně, co a proč budu dělat, ještě před podpisem smlouvy.</p>
+            <div class="step__badge">Připravím za 2–3 dny</div>
+          </div>
+        </div>
+        <div class="step__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="step fade-up">
+          <div class="step__num" aria-hidden="true">03</div>
+          <div class="step__content">
+            <h3>Spuštění a průběžné zlepšování</h3>
+            <p>Reklamy spustím, sleduji každý den a průběžně vylepšuji. Každý měsíc dostanete srozumitelný přehled — žádná cizí slova, jen čísla, která vám něco říkají.</p>
+            <div class="step__badge">Průběžně každý měsíc</div>
+          </div>
         </div>
       </div>
 
-      <!-- NAPLNO -->
-      <div class="p-card fade-in">
-        <div class="p-head">
-          <div class="p-name">Naplno</div>
-          <div class="p-desc">Google i Facebook — zákazníci vás najdou všude</div>
-          <div class="p-price">
-            <span class="p-amt" data-monthly="8 490" data-annual="7 217">8 490</span>
-            <span class="p-cur">Kč / měs.</span>
-          </div>
-          <div class="p-note">Závazek 6 měsíců &middot; + peníze na reklamu od 5 000 Kč / měs.</div>
-          <div class="p-anchor">≈ jedna průměrná zakázka navíc pokryje vše</div>
+      <div class="guarantee-box fade-up">
+        <div class="guarantee-box__icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <ul class="p-feats">
-          <li><span class="fc">✓</span> Správa Google reklam (bez omezení)</li>
-          <li><span class="fc">✓</span> <strong>Facebook a Instagram reklamy</strong></li>
-          <li><span class="fc">✓</span> <strong>Profesionální web zdarma v ceně</strong></li>
-          <li><span class="fc">✓</span> Výběr toho, co lidi hledají (bez omezení)</li>
-          <li><span class="fc">✓</span> Videohovor každý měsíc (60 minut)</li>
-          <li><span class="fc">✓</span> Přehled strategie jednou za čtvrtletí</li>
-          <li><span class="fc">✓</span> Přednostní odpověď (do 4 hodin)</li>
-          <li><span class="fc">✓</span> Reklama na lidi, kteří vás navštívili na Googlu i Facebooku</li>
+        <p><strong>Spokojenost na prvním místě:</strong> Pokud po prvních 3 měsících nebudete spokojeni s výsledky a reklamy nebudou fungovat dle dohodnutých cílů, vrátím vám posledních 30 dní správy zdarma. Vždy si předem nastavíme jasná měřitelná očekávání.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ ABOUT ════════════════ -->
+  <section class="about" id="o-mne" aria-labelledby="about-heading">
+    <div class="container about__inner">
+      <div class="about__photo-col fade-up">
+        <div class="about__photo-wrap">
+          <img src="adam-petrak.png" alt="Adam Petrák — marketingový specialista" class="about__photo" loading="lazy" width="320" height="380" />
+        </div>
+        <div class="about__certs">
+          <p class="about__certs-label">Certifikace</p>
+          <div class="about__certs-grid">
+            <span class="cert-pill">Google Ads</span>
+            <span class="cert-pill">Meta Ads</span>
+            <span class="cert-pill">LinkedIn Ads</span>
+            <span class="cert-pill">TikTok Ads</span>
+            <span class="cert-pill">Sklik</span>
+            <span class="cert-pill">Pinterest Ads</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__text fade-up">
+        <span class="section-tag">O mně</span>
+        <h2 id="about-heading">Nejsem agentura. Jsem Adam.</h2>
+        <blockquote class="about__quote">
+          "Nedávám jen rady — sedím u počítače a dělám výsledky. Každý den."
+        </blockquote>
+        <p>Za 7 let jsem pomohl 50+ firmám vydělat stovky milionů z online reklamy — od malých živnostníků po velké e-shopy a kliniky. Vím, co funguje a co je jen ztráta peněz.</p>
+        <p>Nejsem konzultant, který napíše strategii do šuplíku. Spravuji kampaně, optimalizuji, reportuji — a přitom vždy komunikuji přímo s vámi, bez prostředníků.</p>
+        <p>Po setkání s mnoha živnostníky jsem se rozhodl věnovat právě vám — lidem, kteří přinášejí světu skutečnou hodnotu a zaslouží si, aby je zákazníci našli.</p>
+
+        <div class="about__stats">
+          <div class="about-stat fade-up">
+            <span class="about-stat__num">7 let</span>
+            <span class="about-stat__lbl">v oboru</span>
+          </div>
+          <div class="about-stat fade-up">
+            <span class="about-stat__num">50+</span>
+            <span class="about-stat__lbl">firem posunuto vpřed</span>
+          </div>
+          <div class="about-stat fade-up">
+            <span class="about-stat__num">21 920</span>
+            <span class="about-stat__lbl">hodin praxe</span>
+          </div>
+        </div>
+
+        <ul class="about__list">
+          <li>Výsledky, ne výmluvy — pokud kampaně nefungují, zjistím proč a opravím to</li>
+          <li>Osobní přístup — nejste číslo v databázi. Znám vaše podnikání, zákazníky i konkurenci</li>
+          <li>Průhledné reporty — každý měsíc víte přesně, co se děje s každou korunou</li>
+          <li>Omezená kapacita — nepřijímám více klientů, než mohu dobře obsluhovat</li>
         </ul>
-        <div class="p-footer">
-          <a href="#konzultace" class="btn btn-outline btn-full">Chci balíček Naplno</a>
-        </div>
+        <a href="https://adampetrak.cz" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Více o mně na adampetrak.cz</a>
       </div>
-
     </div>
+  </section>
 
-    <!-- INDIVIDUÁLNÍ ŘEŠENÍ -->
-    <div class="p-custom">
-      <div class="p-custom-in">
-        <div class="p-custom-left">
-          <div class="p-custom-tag">Nevíte co vybrat?</div>
-          <h3>Nevíte, co je pro Vás vhodné? To je normální.</h3>
-          <p>Na bezplatné konzultaci společně zjistíme, co přesně vaše podnikání potřebuje — a navrhneme řešení na míru. Žádné krabicové balíčky, žádné nesmysly.</p>
-        </div>
-        <div class="p-custom-right">
-          <div class="p-custom-includes">
-            <div class="pci-item"><span class="fc">✓</span> Analýza vašeho podnikání</div>
-            <div class="pci-item"><span class="fc">✓</span> Doporučení konkrétního postupu</div>
-            <div class="pci-item"><span class="fc">✓</span> Cenová nabídka na míru</div>
-            <div class="pci-item"><span class="fc">✓</span> Bez závazku a zcela zdarma</div>
+  <!-- ════════════════ RESULTS DARK BAND ════════════════ -->
+  <section class="results-dark" aria-label="Klíčová čísla">
+    <div class="container results-dark__inner">
+      <div class="rd-item fade-up">
+        <span class="rd-num" data-count="50">0</span><span class="rd-suf">+</span>
+        <span class="rd-lbl">spokojených klientů</span>
+      </div>
+      <div class="rd-sep" aria-hidden="true"></div>
+      <div class="rd-item fade-up">
+        <span class="rd-num rd-num--static">2 833 %</span>
+        <span class="rd-lbl">nejvyšší dosažený ROAS</span>
+      </div>
+      <div class="rd-sep" aria-hidden="true"></div>
+      <div class="rd-item fade-up">
+        <span class="rd-num rd-num--static">1,65M EUR</span>
+        <span class="rd-lbl">vygenerovaný obrat</span>
+      </div>
+      <div class="rd-sep" aria-hidden="true"></div>
+      <div class="rd-item fade-up">
+        <span class="rd-num" data-count="21920">0</span>
+        <span class="rd-lbl">hodin praxe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ TESTIMONIALS ════════════════ -->
+  <section class="testimonials" id="reference" aria-labelledby="testi-heading">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Reference</span>
+        <h2 id="testi-heading">Co říkají moji klienti</h2>
+        <p>Skutečné výsledky od skutečných lidí. Klikněte na kartu a přečtěte si celý příběh.</p>
+      </div>
+      <div class="testi-grid">
+
+        <article class="testi-card fade-up">
+          <div class="testi-stars" aria-label="Hodnocení 5 z 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <a href="#konzultace" class="btn btn-accent">Chci individuální konzultaci</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Web samostatně -->
-    <div class="web-addon">
-      <div class="web-addon-in">
-        <div>
-          <h3>Potřebujete jen web?</h3>
-          <p>Profesionální web na míru — i bez správy reklam.</p>
-        </div>
-        <div class="web-addon-right">
-          <div class="web-addon-price">
-            <span>18 000 Kč</span> jednorázově
-            <span class="addon-or">nebo</span>
-            <span>1 500 Kč / měs.</span> na 12 měsíců
+          <blockquote class="testi-text">"Zkoušel jsem Google reklamy sám a topil jsem 4 000 Kč měsíčně bez výsledků. Za první 3 měsíce spolupráce se vše zaplatilo samo a teď mám plný diář na 2 měsíce dopředu."</blockquote>
+          <div class="testi-author">
+            <div class="testi-av" aria-hidden="true">M</div>
+            <div>
+              <div class="testi-name">Miroslav K.</div>
+              <div class="testi-role">Instalatér, Praha</div>
+            </div>
           </div>
-          <a href="#konzultace" class="btn btn-outline-sm">Chci jen web</a>
+          <div class="testi-badge">+3 zakázky za měsíc navíc</div>
+          <button class="testi-toggle" aria-expanded="false" aria-controls="story-1">Přečíst celý příběh</button>
+          <div class="testi-story" id="story-1" hidden>
+            <p>Miroslav přišel ke mně s tím, že mu reklamy na Googlu nefungují — platil 4 000 Kč měsíčně a telefon nezvonil. Po auditu jsem zjistil, že jeho reklamy cílily na celé Česko místo Prahy, a klíčová slova byla nastavená na obecné fráze, které nikdo nehledal.</p>
+            <p>Za 2 týdny jsem přenastavil kampaně na lokální cílení, vybral 30 konkrétních frází, které lidé v Praze skutečně hledají, a upravil web tak, aby zákazník hned věděl, kam zavolat.</p>
+            <p><strong>Výsledek po 3 měsících:</strong> 3 nové zakázky za měsíc navíc, plný diář na 2 měsíce, správa reklam se zaplatila za první měsíc.</p>
+          </div>
+        </article>
+
+        <article class="testi-card testi-card--featured fade-up">
+          <div class="testi-stars" aria-label="Hodnocení 5 z 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="testi-text">"Konečně marketér, který opravdu rozumí číslům. Výsledky kampaní vystřelily nahoru a začali jsme škálovat způsobem, který jsme si ani neuměli představit."</blockquote>
+          <div class="testi-author">
+            <div class="testi-av" aria-hidden="true">P</div>
+            <div>
+              <div class="testi-name">Petra M.</div>
+              <div class="testi-role">CEO, estetická klinika</div>
+            </div>
+          </div>
+          <div class="testi-badge testi-badge--featured">ROAS 800 %+, 3 290 nových klientů</div>
+          <button class="testi-toggle" aria-expanded="false" aria-controls="story-2">Přečíst celý příběh</button>
+          <div class="testi-story" id="story-2" hidden>
+            <p>Estetická klinika Petry bojovala s vysokými náklady na nové klienty. Předchozí agentura fakturovala 25 000 Kč měsíčně, ale výsledky nebyly měřitelné — dostávali "krásné reporty", ale klientů nepřibývalo.</p>
+            <p>Postavili jsme celou strukturu kampaní od nuly: Google Search pro aktivní hledání, Remarketing pro lidi, kteří navštívili web, a Facebook kampaně pro budování povědomí v regionu.</p>
+            <p><strong>Výsledek za 6 měsíců:</strong> ROAS 800 %+, 3 290 nových klientů, náklady na akvizici klesly o 62 % při zachování kvality klientů.</p>
+          </div>
+        </article>
+
+        <article class="testi-card fade-up">
+          <div class="testi-stars" aria-label="Hodnocení 5 z 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="testi-text">"Jako malý autoservis jsme nemohli konkurovat velkým sítím. Teď se zobrazujeme jako první v Googlu v okruhu 20 km a máme o 40 procent více nových zákazníků než loni."</blockquote>
+          <div class="testi-author">
+            <div class="testi-av" aria-hidden="true">T</div>
+            <div>
+              <div class="testi-name">Tomáš B.</div>
+              <div class="testi-role">Majitel autoservisu, Ostrava</div>
+            </div>
+          </div>
+          <div class="testi-badge">+40 % nových zákazníků</div>
+          <button class="testi-toggle" aria-expanded="false" aria-controls="story-3">Přečíst celý příběh</button>
+          <div class="testi-story" id="story-3" hidden>
+            <p>Tomáš měl skvělý servis, ale zákazníci ho nenašli — na Googlu se na první stránce zobrazovaly velké řetězce, on byl na straně 3.</p>
+            <p>Poradil jsem lokální Google Ads strategii zaměřenou na Ostravu a okolí 20 km, přidali jsme Google Business Profile optimalizaci a web jsme doplnili o stránky pro konkrétní služby.</p>
+            <p><strong>Výsledek po 4 měsících:</strong> 1. nebo 2. místo na Googlu pro 15 klíčových frází v lokalitě, +40 % nových zákazníků, ROI správy přes 600 %.</p>
+          </div>
+        </article>
+
+        <article class="testi-card fade-up">
+          <div class="testi-stars" aria-label="Hodnocení 5 z 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="testi-text">"Oceňuji hlavně to, že mi vše vysvětlí normálně česky. Vím přesně, za co platím a co to přináší. U agentur jsem dostávala jen PDF plné slov, kterým jsem nerozuměla."</blockquote>
+          <div class="testi-author">
+            <div class="testi-av" aria-hidden="true">K</div>
+            <div>
+              <div class="testi-name">Kateřina M.</div>
+              <div class="testi-role">Účetní firma, Plzeň</div>
+            </div>
+          </div>
+          <div class="testi-badge">3,2× více zákazníků</div>
+          <button class="testi-toggle" aria-expanded="false" aria-controls="story-4">Přečíst celý příběh</button>
+          <div class="testi-story" id="story-4" hidden>
+            <p>Kateřina provozovala účetní firmu v Plzni — platila 18 000 Kč měsíčně agentuře, dostávala složité reporty a nevěděla, jestli reklamy vůbec fungují.</p>
+            <p>Zjednodušili jsme vše na minimum: jedna Google kampaň zaměřená na Plzeň a okolí, jasné cílové stránky pro každý typ klienta, měsíční report na jedné stránce A4.</p>
+            <p><strong>Výsledek po 5 měsících:</strong> 3,2× více nových klientů při třetinových nákladech oproti předchozí agentuře.</p>
+          </div>
+        </article>
+
+        <article class="testi-card fade-up">
+          <div class="testi-stars" aria-label="Hodnocení 5 z 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="testi-text">"Adam ztrojnásobil příjmy z online marketingu za 3 měsíce. Přístup byl naprosto profesionální — vždy věděl, co dělá a proč."</blockquote>
+          <div class="testi-author">
+            <div class="testi-av" aria-hidden="true">M</div>
+            <div>
+              <div class="testi-name">Martin K.</div>
+              <div class="testi-role">Majitel e-shopu, nábytek</div>
+            </div>
+          </div>
+          <div class="testi-badge">3× více příjmů za 3 měsíce</div>
+          <button class="testi-toggle" aria-expanded="false" aria-controls="story-5">Přečíst celý příběh</button>
+          <div class="testi-story" id="story-5" hidden>
+            <p>Martin provozoval e-shop se židlemi a stoly — ZIDLESTOLY.cz. Reklamy generovaly tržby jen 2–3× nad náklady. Věděl, že to jde lépe, ale nevěděl jak.</p>
+            <p>Kompletně přestavěli jsme Google Shopping kampaně, zavedli dynamický remarketing a optimalizovali jsme produktové stránky pro lepší konverzi.</p>
+            <p><strong>Výsledek za 3 měsíce:</strong> +340 % růst obratu, ROAS přes 800 %, e-shop se stal hlavním zdrojem příjmů místo kamenné prodejny.</p>
+          </div>
+        </article>
+
+        <article class="testi-card fade-up">
+          <div class="testi-stars" aria-label="Hodnocení 5 z 5">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote class="testi-text">"Adamův přístup je jedinečný — kombinuje strategické myšlení s reálnou prací. Leady z jeho kampaní jsou kvalitní a skutečně se mění v zakázky."</blockquote>
+          <div class="testi-author">
+            <div class="testi-av" aria-hidden="true">J</div>
+            <div>
+              <div class="testi-name">Jakub R.</div>
+              <div class="testi-role">Obchodní ředitel, finance</div>
+            </div>
+          </div>
+          <div class="testi-badge">7 400+ kvalitních poptávek</div>
+          <button class="testi-toggle" aria-expanded="false" aria-controls="story-6">Přečíst celý příběh</button>
+          <div class="testi-story" id="story-6" hidden>
+            <p>Finanční firma Jakuba potřebovala kvalitní leady. Předchozí kampaně přinášely hodně prokliků, ale málo reálných poptávek.</p>
+            <p>Zaměřili jsme se na kvalitu nad kvantitu: přísné cílení, negativní klíčová slova, optimalizace konverzního formuláře a A/B testování reklamních textů.</p>
+            <p><strong>Výsledek za 12 měsíců:</strong> 7 400+ kvalitních poptávek, konverzní poměr z leadu na klienta vzrostl z 8 % na 23 %, náklady na jednoho klienta klesly o 47 %.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ COMPARISON ════════════════ -->
+  <section class="comparison" aria-labelledby="cmp-heading">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Proč právě já?</span>
+        <h2 id="cmp-heading">Co dostanete u mě — a co jinde</h2>
+      </div>
+      <div class="cmp-wrap fade-up">
+        <div class="cmp-scroll">
+          <table class="cmp-table" role="table">
+            <thead>
+              <tr>
+                <th scope="col">Co chcete</th>
+                <th scope="col" class="col-me">Reklama Od Adama</th>
+                <th scope="col">Velká agentura</th>
+                <th scope="col">Sám / sama</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cena za správu</td>
+                <td class="col-me"><strong>3 490–8 490 Kč</strong></td>
+                <td>20 000–60 000 Kč</td>
+                <td>"Zdarma" (ale za váš čas)</td>
+              </tr>
+              <tr>
+                <td>Osobní přístup</td>
+                <td class="col-me"><span class="y">&#10003;</span> Vždy 1–2 osoby</td>
+                <td><span class="n">&#10007;</span> Střídají se obchodníci</td>
+                <td><span class="y">&#10003;</span> Vy sami</td>
+              </tr>
+              <tr>
+                <td>Výsledky srozumitelně česky</td>
+                <td class="col-me"><span class="y">&#10003;</span> Přehledný měsíční souhrn</td>
+                <td><span class="w">&#9651;</span> PDF plné cizích slov</td>
+                <td><span class="n">&#10007;</span> Vyhodnocujete sami</td>
+              </tr>
+              <tr>
+                <td>Rychlost spuštění</td>
+                <td class="col-me"><span class="y">&#10003;</span> Do 14 dní</td>
+                <td><span class="n">&#10007;</span> 4–8 týdnů schůzek</td>
+                <td><span class="w">&#9651;</span> Závisí na vašem čase</td>
+              </tr>
+              <tr>
+                <td>Web zdarma v ceně</td>
+                <td class="col-me"><span class="y">&#10003;</span> Ano (balíčky Rust a Naplno)</td>
+                <td><span class="n">&#10007;</span> Vždy extra položka</td>
+                <td><span class="n">&#10007;</span> Platíte jinde</td>
+              </tr>
+              <tr>
+                <td>Záruka výsledků</td>
+                <td class="col-me"><span class="y">&#10003;</span> 30 dní správy zpět</td>
+                <td><span class="n">&#10007;</span> Žádná</td>
+                <td><span class="n">&#10007;</span> Žádná</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </section>
 
-    <p class="pricing-note">Všechny ceny jsou bez DPH. Nejsem plátce DPH. Peníze za reklamu platíte přímo Googlu nebo Facebooku ze své karty — nejsou součástí mé odměny.</p>
-  </div>
-</section>
+  <!-- ════════════════ PRICING ════════════════ -->
+  <section class="pricing" id="ceny" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-tag">Ceník</span>
+        <h2 id="pricing-heading">Přehledné ceny bez skrytých poplatků</h2>
+        <p>Peníze za reklamu (Google, Facebook) platíte přímo nim — nad rámec ceny balíčku a vždy pod vaší kontrolou.</p>
+      </div>
 
-<!-- ══════════════════════════════════════════
-     SROVNÁNÍ
-══════════════════════════════════════════ -->
-<section class="comparison">
-  <div class="container">
-    <div class="section-tag">Proč právě já?</div>
-    <h2 class="section-h2">Co dostanete u mě — a co jinde</h2>
-    <div class="cmp-wrap fade-in">
-      <table class="cmp-table">
-        <thead>
-          <tr>
-            <th>Co chcete</th>
-            <th class="col-me">Reklama Od Adama</th>
-            <th>Velká agentura</th>
-            <th>Sám / sama</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Cena za správu</td>
-            <td class="col-me"><strong>3 490 – 8 490 Kč</strong></td>
-            <td>20 000 – 60 000 Kč</td>
-            <td>„Zdarma" (ale za váš čas)</td>
-          </tr>
-          <tr>
-            <td>Osobní přístup</td>
-            <td class="col-me"><span class="y">✓</span> Vždy 1–2 osoby</td>
-            <td><span class="n">✗</span> Střídají se obchodníci</td>
-            <td><span class="y">✓</span> Vy sami</td>
-          </tr>
-          <tr>
-            <td>Výsledky srozumitelně česky</td>
-            <td class="col-me"><span class="y">✓</span> Přehledný měsíční souhrn</td>
-            <td><span class="w">△</span> PDF plné cizích slov</td>
-            <td><span class="n">✗</span> Vyhodnocujete sami</td>
-          </tr>
-          <tr>
-            <td>Rychlost spuštění</td>
-            <td class="col-me"><span class="y">✓</span> Do 14 dní</td>
-            <td><span class="n">✗</span> 4–8 týdnů schůzek</td>
-            <td><span class="w">△</span> Závisí na vašem čase</td>
-          </tr>
-          <tr>
-            <td>Web zdarma v ceně</td>
-            <td class="col-me"><span class="y">✓</span> Ano (Rust a Naplno)</td>
-            <td><span class="n">✗</span> Vždy extra položka</td>
-            <td><span class="n">✗</span> Platíte jinde</td>
-          </tr>
-          <tr>
-            <td>Záruka výsledků</td>
-            <td class="col-me"><span class="y">✓</span> 30 dní správy zpět</td>
-            <td><span class="n">✗</span> Žádná</td>
-            <td><span class="n">✗</span> Žádná</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="pricing-capacity fade-up">
+        <span class="cap-dot" aria-hidden="true"></span>
+        Přijímám max. <strong>5 nových klientů měsíčně</strong> — teď zbývají 2 místa
+      </div>
+
+      <div class="pricing-toggle fade-up">
+        <span class="tog-label tog-active" id="togMonthly">Každý měsíc</span>
+        <button class="tog-switch" id="togBtn" role="switch" aria-checked="false" aria-label="Přepnout na roční fakturaci se slevou 15 %">
+          <div class="tog-knob"></div>
+        </button>
+        <span class="tog-label" id="togAnnual">Ročně <span class="tog-badge">-15 %</span></span>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- ZÁKLAD -->
+        <div class="p-card fade-up">
+          <div class="p-head">
+            <div class="p-name">Základ</div>
+            <div class="p-desc">Pro ty, kteří chtějí začít chytře a bez rizika</div>
+            <div class="p-price">
+              <span class="p-amt" data-monthly="3 490" data-annual="2 967">3 490</span>
+              <span class="p-cur">Kč / měs.</span>
+            </div>
+            <div class="p-note">Závazek 3 měsíce &middot; + peníze na reklamu od 2 000 Kč / měs.</div>
+            <div class="p-anchor">&asymp; méně než jedna zmeškaná zakázka</div>
+          </div>
+          <ul class="p-feats">
+            <li><span class="fc">&#10003;</span> Správa Google reklam (jedna kampaň)</li>
+            <li><span class="fc">&#10003;</span> Úvodní nastavení a kontrola</li>
+            <li><span class="fc">&#10003;</span> Výběr klíčových slov (až 50 výrazů)</li>
+            <li><span class="fc">&#10003;</span> Měsíční přehled výsledků</li>
+            <li><span class="fc">&#10003;</span> E-mailová podpora (odpověď do 48 hodin)</li>
+            <li><span class="fc">&#10003;</span> Sledování konverzí</li>
+            <li class="feat-off"><span class="fx">&#10007;</span> Tvorba webu</li>
+            <li class="feat-off"><span class="fx">&#10007;</span> Facebook reklamy</li>
+          </ul>
+          <div class="p-footer">
+            <a href="#konzultace" class="btn btn--outline btn--full">Začít se Základem</a>
+          </div>
+        </div>
+
+        <!-- RUST — doporučený -->
+        <div class="p-card p-card--featured fade-up">
+          <div class="p-badge">Nejoblíbenější &middot; Doporučuji pro začátek</div>
+          <div class="p-head">
+            <div class="p-name">Rust</div>
+            <div class="p-desc">Kompletní reklama na internetu včetně webu</div>
+            <div class="p-price">
+              <span class="p-amt" data-monthly="5 490" data-annual="4 667">5 490</span>
+              <span class="p-cur">Kč / měs.</span>
+            </div>
+            <div class="p-note">Závazek 6 měsíců &middot; + peníze na reklamu od 3 000 Kč / měs.</div>
+            <div class="p-anchor">&asymp; cena jednoho nevyřízeného zákazníka</div>
+          </div>
+          <ul class="p-feats">
+            <li><span class="fc">&#10003;</span> Správa Google reklam (až 3 kampaně)</li>
+            <li><span class="fc fc--bold">&#10003;</span> <strong>Profesionální web zdarma v ceně</strong></li>
+            <li><span class="fc">&#10003;</span> Výběr klíčových slov (až 150 výrazů)</li>
+            <li><span class="fc">&#10003;</span> Měsíční přehled + plán na další měsíc</li>
+            <li><span class="fc">&#10003;</span> Videohovor každý měsíc (30 minut)</li>
+            <li><span class="fc">&#10003;</span> Remarketing na návštěvníky webu</li>
+            <li><span class="fc">&#10003;</span> A/B testování reklamních variant</li>
+            <li><span class="fc">&#10003;</span> E-mail i telefon (do 24 hodin)</li>
+          </ul>
+          <div class="p-footer">
+            <a href="#konzultace" class="btn btn--cta btn--full">Chci balíček Rust</a>
+            <div class="p-saving">Ušetříte oproti agentuře: <strong>až 15 000 Kč / měs.</strong></div>
+          </div>
+        </div>
+
+        <!-- NAPLNO -->
+        <div class="p-card fade-up">
+          <div class="p-head">
+            <div class="p-name">Naplno</div>
+            <div class="p-desc">Google i Facebook — zákazníci vás najdou všude</div>
+            <div class="p-price">
+              <span class="p-amt" data-monthly="8 490" data-annual="7 217">8 490</span>
+              <span class="p-cur">Kč / měs.</span>
+            </div>
+            <div class="p-note">Závazek 6 měsíců &middot; + peníze na reklamu od 5 000 Kč / měs.</div>
+            <div class="p-anchor">&asymp; jedna průměrná zakázka navíc pokryje vše</div>
+          </div>
+          <ul class="p-feats">
+            <li><span class="fc">&#10003;</span> Správa Google reklam (bez omezení)</li>
+            <li><span class="fc fc--bold">&#10003;</span> <strong>Facebook a Instagram reklamy</strong></li>
+            <li><span class="fc fc--bold">&#10003;</span> <strong>Profesionální web zdarma v ceně</strong></li>
+            <li><span class="fc">&#10003;</span> Výběr klíčových slov (bez omezení)</li>
+            <li><span class="fc">&#10003;</span> Videohovor každý měsíc (60 minut)</li>
+            <li><span class="fc">&#10003;</span> Přehled strategie jednou za čtvrtletí</li>
+            <li><span class="fc">&#10003;</span> Přednostní odpověď (do 4 hodin)</li>
+            <li><span class="fc">&#10003;</span> Cross-channel remarketing (Google + Facebook)</li>
+          </ul>
+          <div class="p-footer">
+            <a href="#konzultace" class="btn btn--outline btn--full">Chci balíček Naplno</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom CTA -->
+      <div class="p-custom fade-up">
+        <div class="p-custom__inner">
+          <div class="p-custom__left">
+            <span class="section-tag">Nevíte co vybrat?</span>
+            <h3>Na bezplatné konzultaci to společně zjistíme.</h3>
+            <p>Žádné krabicové balíčky. Navrhneme řešení přesně na míru vašemu podnikání a rozpočtu.</p>
+          </div>
+          <div class="p-custom__right">
+            <div class="p-custom__includes">
+              <div class="pci">&#10003; Analýza vašeho podnikání</div>
+              <div class="pci">&#10003; Doporučení konkrétního postupu</div>
+              <div class="pci">&#10003; Cenová nabídka na míru</div>
+              <div class="pci">&#10003; Bez závazku a zcela zdarma</div>
+            </div>
+            <a href="#konzultace" class="btn btn--primary">Chci individuální konzultaci</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web addon -->
+      <div class="web-addon fade-up">
+        <div class="web-addon__inner">
+          <div>
+            <h3>Potřebujete jen web?</h3>
+            <p>Profesionální web na míru — i bez správy reklam.</p>
+          </div>
+          <div class="web-addon__right">
+            <span class="web-price"><strong>18 000 Kč</strong> jednorázově</span>
+            <span class="web-price-or">nebo</span>
+            <span class="web-price"><strong>1 500 Kč / měs.</strong> na 12 měsíců</span>
+            <a href="#konzultace" class="btn btn--outline btn--sm">Chci jen web</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="pricing-note">Všechny ceny jsou bez DPH. Nejsem plátce DPH. Peníze za reklamu platíte přímo Googlu nebo Facebooku ze své karty — nejsou součástí mé odměny.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════════════════════════════════
-     MID-CTA #2
-══════════════════════════════════════════ -->
-<section class="mid-cta mid-cta-dark">
-  <div class="container mid-cta-in">
-    <div class="mid-cta-text">
-      <strong>Začneme během 14 dní. Konzultace je zdarma a bez závazku.</strong>
-      <span>Zavolejte nebo vyplňte formulář — ozvu se do 24 hodin.</span>
+  <!-- ════════════════ FAQ ════════════════ -->
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="container faq__inner">
+      <div class="section-header fade-up">
+        <span class="section-tag">Časté otázky</span>
+        <h2 id="faq-heading">Máte otázky? Mám odpovědi.</h2>
+      </div>
+      <div class="faq__list">
+
+        <div class="faq-item fade-up">
+          <button class="faq-item__q" aria-expanded="false" aria-controls="faq-a1">
+            Jak rychle uvidím výsledky?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__a" id="faq-a1" hidden>
+            <p>První výsledky přicházejí obvykle do 2–4 týdnů od spuštění kampaní. Optimální výkon pak kampaně dosahují po 2–3 měsících průběžné optimalizace. Záleží také na odvětví a výši reklamního budgetu.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-item__q" aria-expanded="false" aria-controls="faq-a2">
+            Kolik musím investovat do samotné reklamy?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__a" id="faq-a2" hidden>
+            <p>Doporučuji minimálně 5 000 Kč/měsíc jako reklamní budget. Ten jde přímo do reklamy na Googlu nebo Mety — já z něj nic nedostávám. Správcovský poplatek je zvlášť. S nižším budgetem jsou výsledky omezené.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-item__q" aria-expanded="false" aria-controls="faq-a3">
+            Musím podepisovat dlouhodobou smlouvu?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__a" id="faq-a3" hidden>
+            <p>Ne. Spolupráci lze ukončit kdykoli s měsíční výpovědní lhůtou. Věřím, že pokud budu odvádět dobrou práci, nebudete chtít odejít. Žádné pokuty, žádné složité podmínky.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-item__q" aria-expanded="false" aria-controls="faq-a4">
+            Budu dostávat reporty o výsledcích?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__a" id="faq-a4" hidden>
+            <p>Ano, každý měsíc dostanete přehledný report v češtině — bez zbytečného žargonu. U balíčků Rust a Naplno navíc provedeme společný videohovor, kde si výsledky projdeme a domluvíme plán na další měsíc.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-item__q" aria-expanded="false" aria-controls="faq-a5">
+            Co když nemám web ani sociální sítě?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__a" id="faq-a5" hidden>
+            <p>Web je pro Google reklamy nutný. Pokud ho nemáte, v balíčcích Rust a Naplno ho dostanete v ceně. Pro Meta reklamy stačí Facebooková stránka — tu vám pomohu nastavit. Vyřešíme vše od A do Z.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="mid-cta-btns">
-      <a href="#konzultace" class="btn btn-accent">Vyplnit formulář</a>
-      <a href="tel:+420734699056" class="btn btn-ghost-light">+420 734 699 056</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════════════════════════════════
-     FORMULÁŘ — Formspree, žádný redirect,
-     potvrzení přímo na stránce
-══════════════════════════════════════════ -->
-<section class="form-section" id="konzultace">
-  <div class="container">
-    <div class="form-wrap">
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section class="contact" id="konzultace" aria-labelledby="contact-heading">
+    <div class="container contact__inner">
 
-      <div class="form-left">
-        <div class="section-tag light">Zdarma pro Vás</div>
-        <h2>Bezplatná konzultace — zjistěte, kde přicházíte o zákazníky</h2>
+      <div class="contact__text fade-up">
+        <span class="section-tag">Zdarma pro vás</span>
+        <h2 id="contact-heading">Bezplatná konzultace — zjistěte, kde přicházíte o zákazníky</h2>
         <p>Za 30 minut vám ukážu:</p>
-        <ul class="audit-points">
+        <ul class="audit-list">
           <li>Jak je vaše firma vidět na Googlu ve srovnání s konkurencí</li>
           <li>Kde přicházíte o zákazníky a proč</li>
           <li>Kolik vás teď přijde získat jednoho zákazníka a jak to zlepšit</li>
           <li>Jaký reklamní rozpočet dává smysl pro váš obor a lokalitu</li>
           <li>Konkrétní tipy, které využijete i bez spolupráce se mnou</li>
         </ul>
-        <p class="audit-note">Bez závazku. Žádné naléhání. Jen užitečné informace.</p>
-
-        <!-- Sociální důkaz pod formulářem -->
-        <div class="form-social-proof">
-          <div class="fsp-item">
-            <span class="fsp-icon">⏱</span>
-            <span>Adam se ozývá do <strong>24 hodin</strong></span>
+        <p class="contact__note">Bez závazku. Žádné naléhání. Jen užitečné informace.</p>
+        <div class="contact__proof">
+          <div class="cp-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Odpověď do <strong>24 hodin</strong>
           </div>
-          <div class="fsp-item">
-            <span class="fsp-icon">👥</span>
-            <span>Přes <strong>50 spokojených</strong> klientů z celé ČR</span>
+          <div class="cp-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Přes <strong>50 spokojených</strong> klientů z celé ČR
           </div>
-          <div class="fsp-item">
-            <span class="fsp-icon">🛡</span>
-            <span>Vaše data jsou v bezpečí, nikam je nepředávám</span>
+          <div class="cp-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <strong>Důvěrné</strong> — data nikam nepředávám
           </div>
         </div>
-
-        <div class="form-contact-alt">
-          <span>Nebo zavolejte rovnou:</span>
-          <a href="tel:+420734699056" class="form-tel">+420 734 699 056</a>
+        <div class="contact__tel-row">
+          Nebo zavolejte rovnou:
+          <a href="tel:+420734699056" class="contact__tel">+420 734 699 056</a>
         </div>
       </div>
 
-      <div class="form-card">
-        <div class="form-card-head">
-          <h3>Objednejte si konzultaci zdarma</h3>
-          <div class="form-spots">Zbývají <strong>2 místa</strong> na duben</div>
-        </div>
-
-        <!--
-          FORMSPREE NASTAVENÍ:
-          1. Jděte na formspree.io a přihlaste se / zaregistrujte se s adam.petrakk@gmail.com
-          2. Vytvořte nový formulář (+ New Form)
-          3. Zkopírujte ID formuláře (vypadá jako "xyzabc12")
-          4. Nahraďte FORMSPREE_FORM_ID níže v script.js
-        -->
-        <form id="mainForm" novalidate>
-          <div class="form-row-2">
-            <div class="fg">
-              <label for="f-name">Vaše jméno *</label>
-              <input type="text" id="f-name" name="name" placeholder="Jan Novák" required autocomplete="name" />
-              <span class="ferr" id="err-name"></span>
+      <div class="contact__form-wrap fade-up">
+        <div class="contact__form-card">
+          <div class="contact__form-header">
+            <h3>Objednejte si konzultaci zdarma</h3>
+            <div class="form-spots">Zbývají <strong>2 místa</strong> na <span id="formMonth">tento měsíc</span></div>
+          </div>
+          <form id="contactForm" novalidate aria-label="Kontaktní formulář">
+            <div class="form-row-2">
+              <div class="fg">
+                <label for="cf-name">Vaše jméno <span aria-hidden="true">*</span></label>
+                <input type="text" id="cf-name" name="name" placeholder="Jan Novák" required autocomplete="name" aria-required="true" aria-describedby="err-name" />
+                <span class="ferr" id="err-name" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="fg">
+                <label for="cf-phone">Telefon <span aria-hidden="true">*</span></label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="+420 734 699 056" required autocomplete="tel" aria-required="true" aria-describedby="err-phone" />
+                <span class="ferr" id="err-phone" role="alert" aria-live="polite"></span>
+              </div>
             </div>
             <div class="fg">
-              <label for="f-phone">Telefon *</label>
-              <input type="tel" id="f-phone" name="phone" placeholder="+420 734 699 056" required autocomplete="tel" />
-              <span class="ferr" id="err-phone"></span>
+              <label for="cf-biz">Čím se zabýváte? <span aria-hidden="true">*</span></label>
+              <input type="text" id="cf-biz" name="business" placeholder="Instalatér, kavárna, účetnictví..." required autocomplete="organization" aria-required="true" aria-describedby="err-biz" />
+              <span class="ferr" id="err-biz" role="alert" aria-live="polite"></span>
             </div>
-          </div>
-          <div class="fg">
-            <label for="f-biz">Čím se zabýváte? *</label>
-            <input type="text" id="f-biz" name="business" placeholder="Instalatér, kavárna, účetnictví..." required autocomplete="organization" />
-            <span class="ferr" id="err-biz"></span>
-          </div>
-          <div class="fg">
-            <label for="f-email">E-mail <span class="field-optional">(nepovinné)</span></label>
-            <input type="email" id="f-email" name="email" placeholder="jan@mojefirma.cz" autocomplete="email" />
-            <span class="ferr" id="err-email"></span>
-          </div>
-          <div class="fg gdpr-row">
-            <label class="gdpr-label">
-              <input type="checkbox" id="f-gdpr" name="gdpr" required />
-              <span>Souhlasím se <a href="ochrana-udaju.html" class="gdpr-link" target="_blank" rel="noopener noreferrer">zpracováním osobních údajů</a> za účelem odpovědi na mou poptávku. *</span>
-            </label>
-            <span class="ferr" id="err-gdpr"></span>
-          </div>
-          <button type="submit" class="btn btn-accent btn-full" id="submitBtn">
-            Chci konzultaci zdarma
-          </button>
-          <p class="form-fine">Vaše údaje jsou v bezpečí. Žádné nevyžádané zprávy — jen se domluvíme na termínu hovoru.</p>
-        </form>
+            <div class="fg">
+              <label for="cf-email">E-mail <span class="field-opt">(nepovinné)</span></label>
+              <input type="email" id="cf-email" name="email" placeholder="jan@mojefirma.cz" autocomplete="email" aria-describedby="err-email" />
+              <span class="ferr" id="err-email" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="fg gdpr-row">
+              <label class="gdpr-label">
+                <input type="checkbox" id="cf-gdpr" name="gdpr" required aria-required="true" aria-describedby="err-gdpr" />
+                <span>Souhlasím se <a href="ochrana-udaju.html" target="_blank" rel="noopener noreferrer" class="gdpr-link">zpracováním osobních údajů</a> za účelem odpovědi na mou poptávku. <span aria-hidden="true">*</span></span>
+              </label>
+              <span class="ferr" id="err-gdpr" role="alert" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn--cta btn--full" id="submitBtn">
+              <span class="btn-text">Chci konzultaci zdarma</span>
+              <span class="btn-spinner" hidden aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" opacity=".25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <p class="form-fine">Vaše údaje jsou v bezpečí. Žádné nevyžádané zprávy — jen se domluvíme na termínu hovoru.</p>
+          </form>
 
-        <div class="form-ok" id="formOk" style="display:none;" role="alert" tabindex="-1">
-          <div class="form-ok-icon">✓</div>
-          <h3>Děkuji za Vaši důvěru,<br>Vážím si jí!</h3>
-          <p>Ozvu se co nejdříve.</p>
+          <div class="form-success" id="formSuccess" hidden role="alert" tabindex="-1">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#16A34A"/><polyline points="9 12 11 14 15 10" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <h3>Formulář odeslán!</h3>
+            <p>Ozvu se vám do 24 hodin. Těším se na spolupráci.</p>
+          </div>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══════════════════════════════════════════
-     FAQ — hned za formulářem, odbourává
-     zbývající pochybnosti
-══════════════════════════════════════════ -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="section-tag">Časté otázky</div>
-    <h2 class="section-h2">Máte otázky? Tady jsou odpovědi.</h2>
+</main>
 
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Musím mít vlastní web, aby mi spravoval Google reklamy?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Ne — v balíčcích Rust a Naplno je web přímo v ceně. Pokud web máte, skvěle. Pokud ne, postarám se o vše.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Kolik peněz musím mít minimálně na reklamy?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Minimálně doporučuji 2 000 Kč za měsíc na Google reklamy. Pro většinu oborů je ale rozumnější začít s 3 000 až 5 000 Kč. Řekneme si to přesně na konzultaci — záleží na oboru a lokalitě.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Jak rychle uvidím první výsledky?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Google reklamy začnou přivádět návštěvníky hned po spuštění. První zákazníci přicházejí obvykle za 2 až 6 týdnů. Nejlepší výsledky přicházejí po 3 měsících, kdy jsou reklamy odladěné na základě dat.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Proč závazek 3 nebo 6 měsíců?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Reklama na internetu potřebuje čas. Google potřebuje 60 až 90 dní dat, aby reklamy fungovaly co nejlépe. Kdo slibuje výsledky za 2 týdny, klame vás. Závazek chrání nás oba.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Jak to funguje s penězi za reklamu?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Peníze za reklamu platíte přímo Googlu nebo Facebooku ze své karty — já k nim nemám přístup. Moje odměna je jen za správu a vylepšování reklam. Máte vždy plnou kontrolu.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Jsem z malého města — funguje to i mimo velká města?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Absolutně ano — a v menších městech je to často snazší, protože konkurence je menší. Pracuji s klienty po celé ČR, vše řešíme online přes telefon nebo videohovor.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Co když nebudu spokojený?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Pokud po prvních 3 měsících nebudete spokojeni s výsledky, vrátím vám posledních 30 dní správy zdarma. Od začátku si nastavíme jasné cíle — aby bylo zřejmé, jak úspěch měřit.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">
-          Nerozumím reklamám vůbec — zvládnu to?
-          <span class="faq-arr" aria-hidden="true">&#9660;</span>
-        </button>
-        <div class="faq-a">
-          <p>Přesně proto jsem tady. Od vás potřebuji jen to, co děláte a koho chcete oslovit. O vše ostatní se postarám já — nastavení, správu, optimalizaci i reporty. Nemusíte rozumět jedinému technickému pojmu.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     OCHRANA OSOBNÍCH ÚDAJŮ
-══════════════════════════════════════════ -->
-<section class="privacy-section" id="gdpr">
-  <div class="container">
-    <div class="section-tag">Vaše data jsou v bezpečí</div>
-    <h2 class="section-h2 privacy-h">Ochrana osobních údajů</h2>
-    <div class="privacy-grid">
-      <div class="privacy-block fade-in">
-        <h3>Kdo zpracovává vaše údaje</h3>
-        <p>Adam Petrák, IČ: XXXXXXXX, se sídlem v České republice. Nejsem plátce DPH. Kontakt: <a href="mailto:adam@adampetrak.cz">adam@adampetrak.cz</a>, +420 734 699 056.</p>
-      </div>
-      <div class="privacy-block fade-in">
-        <h3>Jaké údaje a proč</h3>
-        <p>Při vyplnění formuláře zpracovávám vaše jméno, e-mail a telefon výhradně za účelem kontaktování vás a domluvení konzultace. Žádné jiné účely.</p>
-      </div>
-      <div class="privacy-block fade-in">
-        <h3>Jak dlouho</h3>
-        <p>Vaše údaje uchovávám po dobu nezbytně nutnou pro splnění účelu — nejdéle 1 rok od posledního kontaktu. Poté jsou smazány.</p>
-      </div>
-      <div class="privacy-block fade-in">
-        <h3>Vaše práva</h3>
-        <p>Máte právo na přístup ke svým údajům, jejich opravu, výmaz nebo omezení zpracování. Stačí napsat na <a href="mailto:adam@adampetrak.cz">adam@adampetrak.cz</a>. Odpovím do 30 dní.</p>
-      </div>
-    </div>
-    <p class="privacy-note">Vaše údaje neprodávám ani nepředávám třetím stranám. Jsou uloženy zabezpečeně a přistupuji k nim výhradně já.</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     FINÁLNÍ CTA
-══════════════════════════════════════════ -->
-<section class="final-cta">
-  <div class="container">
-    <div class="final-cta-in">
-      <h2>Každý den bez správné reklamy je zákazník, který zavolá konkurenci.</h2>
-      <p>Bezplatná konzultace trvá 30 minut a nic nestojí. Zjistěte, kolik zákazníků vám každý měsíc uniká.</p>
-      <div class="final-btns">
-        <a href="#konzultace" class="btn btn-accent btn-large">Chci konzultaci zdarma</a>
-        <a href="tel:+420734699056" class="btn btn-ghost-light btn-large">+420 734 699 056</a>
-      </div>
-      <div class="final-sub">Ozvu se do 24 hodin &middot; Bez závazku &middot; Zcela zdarma</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════ -->
+<!-- ════════════════ FOOTER ════════════════ -->
 <footer class="footer">
-  <div class="container footer-in">
-    <div class="footer-brand">
-      <div class="logo">Reklama <span>Od Adama</span></div>
-      <p>Google reklamy, Facebook reklamy a weby pro malé firmy a živnostníky. Výsledky bez falešných slibů.</p>
-      <p class="footer-brand-name">Adam Petrák &middot; <a href="mailto:adam@adampetrak.cz">adam@adampetrak.cz</a></p>
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="logo-mark" aria-hidden="true">A</span>
+      <span>Reklama <strong>od Adama</strong></span>
     </div>
-    <div class="footer-nav">
-      <h4>Navigace</h4>
-      <ul>
-        <li><a href="#jak-to-funguje">Jak to funguje</a></li>
-        <li><a href="#o-mne">O mně</a></li>
-        <li><a href="#reference">Reference</a></li>
-        <li><a href="#ceny">Ceny</a></li>
-        <li><a href="#faq">Časté otázky</a></li>
-        <li><a href="#konzultace">Konzultace zdarma</a></li>
-      </ul>
-    </div>
-    <div class="footer-contact">
-      <h4>Kontakt</h4>
-      <p><a href="tel:+420734699056">+420 734 699 056</a></p>
-      <p><a href="mailto:adam@adampetrak.cz">adam@adampetrak.cz</a></p>
-      <p><a href="https://adampetrak.cz" target="_blank" rel="noopener">adampetrak.cz</a></p>
-      <p>Pracuji celou ČR</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2026 Adam Petrák &middot; Reklama Od Adama &nbsp;|&nbsp; <a href="ochrana-udaju.html">Ochrana osobních údajů</a> &nbsp;|&nbsp; <a href="podminky.html">Obchodní podmínky</a></p>
-    </div>
+    <nav class="footer__links" aria-label="Patička navigace">
+      <a href="ochrana-udaju.html">Ochrana osobních údajů</a>
+      <a href="podminky.html">Podmínky spolupráce</a>
+      <a href="https://adampetrak.cz" target="_blank" rel="noopener noreferrer">adampetrak.cz</a>
+    </nav>
+    <p class="footer__copy">&copy; 2025 Adam Petrák &middot; IČO: 09498897 &middot; Nejsem plátce DPH</p>
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════
-     STICKY CTA — formulář + telefon
-══════════════════════════════════════════ -->
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a href="#konzultace" class="sticky-btn">Konzultace zdarma</a>
-  <a href="tel:+420734699056" class="sticky-tel" aria-label="Zavolat Adamovi">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.21 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-  </a>
-</div>
-
 <script src="script.js"></script>
-<script src="cookie-consent.js"></script>
 </body>
 </html>
