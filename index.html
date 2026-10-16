@@ -66,22 +66,7 @@
   </script>
 
   <!-- ═══ GOOGLE CONSENT MODE v2 — výchozí stav (před souhlasem = denied) ═══ -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('consent', 'default', {
-      'ad_storage':          'denied',
-      'analytics_storage':   'denied',
-      'ad_user_data':        'denied',
-      'ad_personalization':  'denied',
-      'wait_for_update':     500
-    });
-    gtag('js', new Date());
-    /*
-     * Po vložení GTM kódu odkomentujte:
-     * gtag('config', 'G-XXXXXXXXXX');
-     */
-  </script>
+  <script src="site-inline-1.js"></script>
   <!--
     Google Tag Manager — vložte váš GTM snippet zde:
     <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
@@ -737,7 +722,10 @@
           <h3>Objednejte si konzultaci zdarma</h3>
           <div class="form-spots">Zbývají <strong>2 místa</strong> na duben</div>
         </div>
-        <form id="mainForm" novalidate>
+        <form id="mainForm" action="https://formsubmit.co/adam.petrakk@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nová poptávka – Reklama od Adama">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row-2">
             <div class="fg">
               <label for="f-name">Vaše jméno *</label>

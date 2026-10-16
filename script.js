@@ -128,24 +128,12 @@ function validate(data) {
   return ok;
 }
 
-mainForm?.addEventListener('submit', function(e) {
-  e.preventDefault();
+mainForm?.addEventListener('submit', function (event) {
   const data = new FormData(this);
-  if (!validate(data)) return;
-  submitBtn.textContent = 'Odesílám...';
-  submitBtn.disabled = true;
-
-  /*
-   * Napojte na Formspree nebo vlastní backend:
-   * fetch('https://formspree.io/f/VASE_ID', { method: 'POST', body: data })
-   *   .then(r => r.ok ? showSuccess() : alert('Chyba — zkuste to prosím znovu.'))
-   *   .catch(() => alert('Chyba připojení.'));
-   */
-  setTimeout(() => {
-    mainForm.style.display = 'none';
-    formOk.style.display = 'block';
-    formOk.focus();
-  }, 1100);
+  if (data.get('_honey') || !validate(data) || !this.reportValidity()) {
+    event.preventDefault();
+  }
+  // The provider displays confirmation only after accepting the submission.
 });
 
 $$('#mainForm input').forEach(i => {
